@@ -1,0 +1,27 @@
+{
+  "name": "blogger",
+  "version": "1.0.0",
+  "description": "Blogging app in MEAN stack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbmira01/Blogger.git"
+  },
+  "keywords": [
+    "blog",
+    "html",
+    "mongo",
+    "express",
+    "angular",
+    "node"
+  ],
+  "author": "Calvin Miracle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cbmira01/Blogger/issues"
+  },
+  "homepage": "https://github.com/cbmira01/Blogger#readme"
+}
