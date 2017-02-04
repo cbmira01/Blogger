@@ -1,4 +1,8 @@
 //
+  "use strict";
+
+  var ngApp = angular.module("bloggerApp", ["ngRoute"]);
+
   ngApp.config(function($routeProvider) {
     $routeProvider
       .when("/", {
