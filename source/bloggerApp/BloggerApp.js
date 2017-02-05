@@ -1,15 +1,15 @@
 //
   "use strict";
 
-  var ngApp = angular.module("bloggerApp", ["ngRoute"]);
+  var blogApp = angular.module("blogApp", ["ngRoute"]);
 
-  ngApp.config(function($routeProvider) {
+  blogApp.config( ["$routeProvider", function($routeProvider) {
     $routeProvider
       .when("/", {
-          templateUrl: "/templates/home.html",
+          templateUrl: "templates/home.html",
           controller: "HomeController"
       })
       .otherwise({
           redirectTo: "/"
       });
-  });
+  }]);

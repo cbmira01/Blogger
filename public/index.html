@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ngApp">
+<html ng-app="blogApp">
   <head>
     <title>DPNA Blogs</title>
     <meta charset="utf-8">
@@ -7,12 +7,13 @@
   </head>
 
   <body>
-      <h2>Deer Park Neighborhood Association Blogs</h2>
+    <h2>Deer Park Neighborhood Association Blogs</h2>
 
     <!-- Application content delivered here -->
     <div ng-view></div>
 
-    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
     <script src="/angular/BloggerApp.min.js"></script>
   </body>
 </html>
