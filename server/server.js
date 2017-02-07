@@ -1,9 +1,9 @@
 // 
-const express    = require("express");
-const config     = require("../config/serverConfig");
-const router     = require("./routes");
+const express = require("express");
+const config = require("./serverConfig");
+const router = require("./routes");
 const bodyParser = require("body-parser");
-const path       = require("path");
+const path = require("path");
 
 const app = express();
 // for parsing JSON and application/x-www-form-urlencoded
@@ -16,5 +16,5 @@ app.use(router);
 
 app.listen(config.port, function() {
   console.log(`Base directory is ${__dirname}`);
-  console.log(`Blogger app is listening on port ${config.port}.`);
+  console.log(`Blogger app is listening on port ${config.port}`);
 });
