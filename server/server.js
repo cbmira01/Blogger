@@ -15,6 +15,7 @@ app.use("/node_modules",express.static(path.join(__dirname, "../node_modules")))
 app.use(router);
 
 app.listen(config.port, function() {
-  console.log(`Base directory is ${__dirname}`);
-  console.log(`Blogger app is listening on port ${config.port}`);
+  console.log(`Express server is running...`);
+  console.log(`  Base directory ${__dirname}`);
+  console.log(`  Listening on port ${config.port} \n`);
 });

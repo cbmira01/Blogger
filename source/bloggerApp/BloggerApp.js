@@ -8,16 +8,20 @@ blogApp.config([
   "$locationProvider", 
   function($routeProvider, $locationProvider) {
     $routeProvider
-      .when("/", {
+      .when("/home", {
           templateUrl: "templates/home.html",
           controller: "HomeController"
+      })
+      .when("/", {
+          redirectTo: "/home"
       })
       .when("/users", {
           templateUrl: "templates/users.html",
           controller: "UsersController"
       })
       .otherwise({
-          redirectTo: "/"
+          templateUrl: "templates/unknown.html",
+          controller: "UnknownController"
       });
 
     // Use the HTML5 History API
