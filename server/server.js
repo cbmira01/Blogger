@@ -2,16 +2,16 @@
 const express = require("express");
 const config = require("./serverConfig");
 const router = require("./routes");
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
 const cli = require("commander");
 
 // Find Mongo connection info on the command line.
 cli
-  .option('-c, --connect <connect>', 'Mongo connect address')
-  .option('-u, --username <username>', 'Mongo username')
-  .option('-p, --password <password>', 'Mongo password')
+  .option("-c, --connect <connect>", "Mongo connect address")
+  .option("-u, --username <username>", "Mongo username")
+  .option("-p, --password <password>", "Mongo password")
   .parse(process.argv);
 
 if (!cli.connect || !cli.username || !cli.password ) {
@@ -19,19 +19,35 @@ if (!cli.connect || !cli.username || !cli.password ) {
   process.exit();
 }
 
-
-process.exit();
-
-// todo: Establish MongDB connection
-const dbName = "";
+// Establish MongDB connection 
+//  (thanks to http://theholmesoffice.com/mongoose-connection-best-practice/)
+const dbName = "bloggerAppDb";
 const mongoPort = "27017";
-// Mongoose connect string specification
-//   mongodb://[username:password@]host1[:port1]][/[database][?options]]
-const mcs = `mongodb://${cli.username}:${cli.password}@${cli.connect}:${mongoPort}/${dbName}`;
-mongoose.connect(mcs);
-const db = mongoose.connection;
-// mongo error
-db.on('error', console.error.bind(console, 'connection error:'));
+
+const dbURI = `mongodb://${cli.username}:${cli.password}@${cli.connect}:${mongoPort}/${dbName}`;
+mongoose.connect(dbURI);
+
+mongoose.connection.on("connected", function () {  
+  console.log("Mongoose connection open to " + dbURI);
+}); 
+
+mongoose.connection.on("error",function (err) {  
+  console.log("Mongoose connection error: " + err);
+  process.exit();
+}); 
+
+mongoose.connection.on("disconnected", function () {  
+  console.log("Mongoose --disconnected--"); 
+  process.exit();
+});
+
+// If the Node process ends, close the Mongoose connection 
+process.on("SIGINT", function() {  
+  mongoose.connection.close(function () { 
+    console.log("Mongoose disconnected via app termination"); 
+    process.exit(0); 
+  }); 
+}); 
 
 const app = express();
 // for parsing JSON and application/x-www-form-urlencoded
