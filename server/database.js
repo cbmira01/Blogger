@@ -2,6 +2,8 @@
 // Establish MongDB connection 
 //  (thanks to http://theholmesoffice.com/mongoose-connection-best-practice/)
 
+"use strict";
+
 const mongoose = require("mongoose");
 const cli = require("commander");
 const dbConfig = require("./config");

@@ -2,6 +2,8 @@
 // Start server-side components, Express and Mongoose,
 //   and establish application routing.
 
+"use strict";
+
 const express = require("express");
 const serverConfig = require("./config");
 const router = require("./routes");
