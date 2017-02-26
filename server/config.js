@@ -8,8 +8,9 @@ const config = {
   serverPort: "8080",
 
   // MongoDB configuration
-  dbName: "bloggerAppDb",
+  dbName: "bloggerAppDB",
   mongoPort: "27017",
+  mongoUsesAuth: true,
 }
 
 module.exports = config;

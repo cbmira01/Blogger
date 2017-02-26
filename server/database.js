@@ -10,13 +10,20 @@ const dbConfig = require("./config");
 
 // Find MongoDB connection info on the command line
 cli
-  .option("-c, --connect <connect>", "Mongo connect address")
-  .option("-u, --username <username>", "Mongo username")
-  .option("-p, --password <password>", "Mongo password")
+  .option("-c, --connect <connect>", "database connection address")
+  .option("-u, --username <username>", "database username")
+  .option("-p, --password <password>", "database password")
+  .option("-r, --reset", "reset database, if switch is present")
   .parse(process.argv);
 
-if (!cli.connect || !cli.username || !cli.password ) {
-  console.log("  Server startup needs connecton info for MongoDB. Use index --help for help.");
+if ( !cli.connect ) {
+  console.log("  Server startup needs connect location for MongoDB. Use index --help for help.");
+  process.exit();
+}
+
+const haveAuthInfo = ( cli.username && cli.password );
+if ( dbConfig.mongoUsesAuth && !haveAuthInfo ) {
+  console.log("  Server startup needs username and password for MongoDB. Use index --help for help.");
   process.exit();
 }
 
