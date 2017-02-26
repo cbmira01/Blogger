@@ -25,7 +25,8 @@ app.use(router);
 
 // Start Express
 app.listen(serverConfig.serverPort, function() {
+  console.log();
   console.log(`Express server is running...`);
-  console.log(`  Base directory ${__dirname}`);
-  console.log(`  Listening on port ${serverConfig.serverPort} \n`);
+  console.log(`  Base directory: ${__dirname}`);
+  console.log(`  Listening on port ${serverConfig.serverPort}\n`);
 });

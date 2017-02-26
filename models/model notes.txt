@@ -3,13 +3,14 @@
        {post1, [
                {postinfo1},
                {postinfo2},
-               {postinfo3},
+               {postinfo3}
         ]},
        {post2, []},
-       {post3, []},
+       {post3, []}
 ]},
 {user2},
-{user3},
+{user3}
+...
 ]
 
 

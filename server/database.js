@@ -13,7 +13,7 @@ cli
   .option("-c, --connect <connect>", "database connection address")
   .option("-u, --username <username>", "database username")
   .option("-p, --password <password>", "database password")
-  .option("-r, --reset", "reset database, if switch is present")
+  .option("-r, --reseed", "reseed database, if present")
   .parse(process.argv);
 
 if ( !cli.connect ) {
@@ -34,29 +34,31 @@ const dbURI = `mongodb://`
   + `${dbConfig.mongoPort}/`
   + `${dbConfig.dbName}`
   ;
-
 mongoose.connect(dbURI);
 
+// Import models
+require("../models/blogger.model.js");
+
 mongoose.connection.on("connected", function () {  
-  console.log(`MongoDB connection open to ${dbURI}`);
+  console.log(`MongoDB connection open to ${dbURI}\n`);
 }); 
 
 // Authentication errors caught here; halt the application
 mongoose.connection.on("error",function (err) {  
-  console.log(`MongoDB connection error: ${err}`);
+  console.log(`MongoDB connection error: ${err}\n`);
   process.exit();
 }); 
 
 // If MongoDB disconnects, then halt the application
 mongoose.connection.on("disconnected", function () {  
-  console.log("MongoDB --disconnected--"); 
+  console.log("MongoDB disconnected, application exits\n"); 
   process.exit();
 });
 
 // If the application process ends, then close the MongoDB connection nicely
-process.on("SIGINT", function() {  
+process.on("disconnect", function() {  
   mongoose.connection.close(function () { 
-    console.log("MongoDB disconnected via app termination"); 
+    console.log("MongoDB connection closed because the app was terminated\n"); 
     process.exit(0); 
   }); 
 }); 
