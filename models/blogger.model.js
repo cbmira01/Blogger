@@ -22,7 +22,6 @@ Blogger.count({}, function(err, count) {
     return ;
   }
 
-  console.log();
   console.log(`Database re-seeding was requested...\n`);
 
   // Delete contents

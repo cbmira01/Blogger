@@ -1,0 +1,59 @@
+
+
+Notes on blogger application
+
+HOME, LIST POSTS, EDIT BLOGGERS, EDIT POSTS
+
+Angular routes:
+
+-- Unknown routes redirect to /home
+
+/home 
+  - display all bloggers and allow to read their postings
+  - link to /list-posts/:name
+
+/list-posts/all
+  - brief list of all posts from all bloggers in reverse time order
+  - link to /read-post/:guid
+
+/list-posts/:name
+  - brief list of all posts from blogger :name in reverse time order
+  - link to /read-post/:guid
+
+/read-post/:guid
+  - read a particular post :guid
+
+/add-blogger
+  - add a new blogger
+
+/edit-bloggers
+  - list all bloggers and allow edit/delete
+  - link to /add-blogger
+  - link to /delete-blogger/:name
+  - link to /update-blogger/:name
+
+/delete-blogger/:name
+  - delete blogger :name
+  - redirect to /home
+
+/update-blogger/:name
+  - update blogger :name
+  - redirect to /home
+
+/add-post
+  - add a new blog posting
+  - redirect to /list-posts/all
+
+/edit-posts
+  - list all posts and allow edit/delete
+  - link to add-post
+  - link to /delete-post/:guid
+  - link to /update-post/:guid
+
+/delete-post/:guid
+  - delete blogger :guid
+  - redirect to /home
+
+/update-post/:guid
+  - update post :guid
+  - redirect to /home
