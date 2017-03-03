@@ -1,13 +1,13 @@
 [
-  { "bloggerName": "Blogger 1", 
-    "bloggerSlogan": "Slogan 1"
+  { "name": "Blogger 1", 
+    "slogan": "Slogan 1"
   },
 
-  { "bloggerName": "Blogger 2", 
-    "bloggerSlogan": "Slogan 2"
+  { "name": "Blogger 2", 
+    "slogan": "Slogan 2"
   },
 
-  { "bloggerName": "Blogger 3", 
-    "bloggerSlogan": "Slogan 3" 
+  { "name": "Blogger 3", 
+    "slogan": "Slogan 3" 
   }
 ]

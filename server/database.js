@@ -38,6 +38,7 @@ mongoose.connect(dbURI);
 
 // Import models
 require("../models/blogger.model.js");
+require("../models/posting.model.js");
 
 mongoose.connection.on("connected", function () {  
   console.log(`MongoDB connection open to ${dbURI}\n`);

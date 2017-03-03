@@ -4,16 +4,16 @@
 const mongoose = require("mongoose");
 const cli = require("commander");
 
-const BloggerSchema = new mongoose.Schema({
-  name: String,
-  slogan: String,
+const PostingSchema = new mongoose.Schema({
+  title: String,
+  content: String,
   created_at: { type: Date, default: Date.now },
 });
 
-const Blogger = mongoose.model("Blogger", BloggerSchema);
+const Posting = mongoose.model("Posting", PostingSchema);
 
 // Seed the database if empty or if requested at startup
-Blogger.count({}, function(err, count) {
+Posting.count({}, function(err, count) {
   if (err) {
     throw err;
   }
@@ -22,22 +22,22 @@ Blogger.count({}, function(err, count) {
     return ;
   }
 
-  console.log(`Blogger collection was re-seeded...`);
+  console.log(`Posting collection was re-seeded...`);
 
   // Delete contents
-  Blogger.remove({}, function(err) {
+  Posting.remove({}, function(err) {
     if (err) {
       throw err;
     }
   });
 
   // Reseed the database to a known state
-  const bloggers = require("./blogger.seed.json");
-  Blogger.create(bloggers, function(err, newBloggers) {
+  const postings = require("./posting.seed.json");
+  Posting.create(postings, function(err, newPostings) {
     if (err) {
       throw err;
     }
   });
 });
 
-module.exports = Blogger
+module.exports = Posting
