@@ -1,4 +1,6 @@
 
+// This model is required in server/database.js 
+
 "use strict";
 
 const mongoose = require("mongoose");
@@ -22,8 +24,6 @@ Posting.count({}, function(err, count) {
     return ;
   }
 
-  console.log(`Posting collection was re-seeded...`);
-
   // Delete contents
   Posting.remove({}, function(err) {
     if (err) {
@@ -38,6 +38,9 @@ Posting.count({}, function(err, count) {
       throw err;
     }
   });
+  
+  console.log(`Posting collection was re-seeded...`);
+
 });
 
 module.exports = Posting

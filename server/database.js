@@ -17,7 +17,7 @@ cli
   .parse(process.argv);
 
 if ( !cli.connect ) {
-  console.log("  Server startup needs connect location for MongoDB. Use index --help for help.");
+  console.log("  Server startup needs connect information for MongoDB. Use index --help for help.");
   process.exit();
 }
 
@@ -34,11 +34,13 @@ const dbURI = `mongodb://`
   + `${dbConfig.mongoPort}/`
   + `${dbConfig.dbName}`
   ;
+  
+console.log(`MongoDB connection string: ${dbURI}`);  
 mongoose.connect(dbURI);
 
 // Import models
-require("../models/blogger.model.js");
-require("../models/posting.model.js");
+require("./models/blogger.model.js");
+require("./models/posting.model.js");
 
 mongoose.connection.on("connected", function () {  
   console.log(`MongoDB connection open to ${dbURI}\n`);
