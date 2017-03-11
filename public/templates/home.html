@@ -1,6 +1,25 @@
  
-<div>
-  <h4>Home Route</h4>
-  <h5>{{resData.name}}</h5>
-  <h5>{{resData.info}}</h5>
+<div >
+
+  <h2>Read All Blogger Records</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th><pre>ID     </pre></th>
+        <th><pre>Name         </pre></th>
+        <th><pre>slogan       </pre></th>
+        <th><pre>created_at   </pre></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="blogger in bloggers">
+        <td>{{blogger._id}}</td>
+        <td>{{blogger.name}}</td>
+        <td>{{blogger.slogan}}</td>
+        <td>{{blogger.created_at}}</td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>

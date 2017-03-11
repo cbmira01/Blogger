@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Establish static and virtual routing
 app.use("/", express.static(path.join(__dirname, "../public")));
+app.use("/clientApp", express.static(path.join(__dirname, "../clientApp")));
 app.use("/node_modules",express.static(path.join(__dirname, "../node_modules")));
 app.use(router);
 
