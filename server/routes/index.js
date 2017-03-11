@@ -1,7 +1,15 @@
-// 
+
+// http://stackoverflow.com/a/31443029
+//   Filter for API routes first, then let Angular 
+//   handle the rest of the routes.
+
 const path = require("path");
 const router = require("express").Router();
 module.exports = router;
+
+const postingController = require('./controllers/posting.controller');
+const bloggerController = require('./controllers/blogger.controller');
+
 
 // Log all requested routes to the console.
 router.use(function(req, res, next) {
@@ -9,15 +17,15 @@ router.use(function(req, res, next) {
   next();
 });
 
-// http://stackoverflow.com/a/31443029
-// Filter for API routes first...
-router.get("/api/home", function(req, res) {
+router.get("/api/home", bloggerController.list);
+
+/* router.get("/api/home", function(req, res) {
   const myData = {
     "name": "Here is my HOME name...",
     "info": "Here is some HOME info to look at..."
   }
   res.json(myData);
-});
+}); */
 
 router.get("/api/users", function(req, res) {
   const myData = {
@@ -27,7 +35,6 @@ router.get("/api/users", function(req, res) {
   res.json(myData);
 });
 
-// ...then let Angular handle the rest of the routes
 router.get("/*", function(req, res){
   console.log(`  Route passed to Angular: ${req.method}, ${req.path}`);
   const serveFile = path.join(__dirname, "/../../", "public/index.html");

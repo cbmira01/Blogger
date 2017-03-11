@@ -34,8 +34,6 @@ const dbURI = `mongodb://`
   + `${dbConfig.mongoPort}/`
   + `${dbConfig.dbName}`
   ;
-  
-console.log(`MongoDB connection string: ${dbURI}`);  
 mongoose.connect(dbURI);
 
 // Import models
