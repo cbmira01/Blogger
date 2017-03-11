@@ -8,7 +8,7 @@ const config = {
   serverPort: "8080",
 
   // MongoDB configuration
-  dbName: "bloggerAppDB",
+  dbName: "bloggerAppDb",
   mongoPort: "27017",
   mongoUsesAuth: true,
 }
