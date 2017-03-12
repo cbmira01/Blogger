@@ -29,18 +29,17 @@ Posting.count({}, function(err, count) {
     if (err) {
       throw err;
     }
+    
+    // Reseed the database to a known state.
+    const postings = require("./posting.seed.json");
+    Posting.create(postings, function(err, newPostings) {
+      if (err) {
+        throw err;
+      }
+    });
+    
+    console.log(`Posting collection was re-seeded...`);
   });
-
-  // Reseed the database to a known state.
-  const postings = require("./posting.seed.json");
-  Posting.create(postings, function(err, newPostings) {
-    if (err) {
-      throw err;
-    }
-  });
-  
-  console.log(`Posting collection was re-seeded...`);
-
 });
 
 module.exports = Posting

@@ -29,18 +29,17 @@ Blogger.count({}, function(err, count) {
     if (err) {
       throw err;
     }
-  });
+    
+    // Reseed the database to a known state.
+    const bloggers = require("./blogger.seed.json");
+    Blogger.create(bloggers, function(err, newBloggers) {
+      if (err) {
+        throw err;
+      }
+    }); 
 
-  // Reseed the database to a known state.
-  const bloggers = require("./blogger.seed.json");
-  Blogger.create(bloggers, function(err, newBloggers) {
-    if (err) {
-      throw err;
-    }
-  });
-  
-  console.log(`Blogger collection was re-seeded...`);
-
+    console.log(`Blogger collection was re-seeded...`);    
+  });  
 });
 
 module.exports = Blogger

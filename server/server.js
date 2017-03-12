@@ -11,9 +11,6 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
 
-// Pull in database connection dialogue
-require("./database");
-
 // For parsing JSON and application/x-www-form-urlencoded
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
@@ -23,6 +20,9 @@ app.use("/", express.static(path.join(__dirname, "../public")));
 app.use("/clientApp", express.static(path.join(__dirname, "../clientApp")));
 app.use("/node_modules",express.static(path.join(__dirname, "../node_modules")));
 app.use(router);
+
+// Pull in database connection dialogue
+require("./database");
 
 // Start Express
 app.listen(serverConfig.serverPort, function() {

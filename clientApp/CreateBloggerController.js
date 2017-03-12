@@ -2,9 +2,8 @@
 blogApp.controller("CreateBloggerController", [
   "$scope",
   "$http",
-  "$location",
   "$log",
-  function ($scope, $http, $location, $log) {
+  function ($scope, $http, $log) {
     
     $scope.createBlogger = function() {
 
@@ -20,15 +19,17 @@ blogApp.controller("CreateBloggerController", [
         })
         .then(
           function(response) { //success
-            $scope.response = response;
+            $scope.data = response.data;
+            $scope.status = response.status;
           }, 
           function(response) { //error
-            $log.info(`Problem in CreateBloggerController: \n${JSON.stringify(response, null, 2)}`);
-            alert(`Problem in CreateBloggerController`);
+            $scope.data = response.data || "Request failed";
+            $scope.status = response.status;
+            
+            // $log.info(`Problem in CreateBloggerController: \n${JSON.stringify(response, null, 2)}`);
+            // alert(`Problem in CreateBloggerController`);
           }
-        )
-        
-      $location.path("/home");
+        )        
     }
   }
 ]);
