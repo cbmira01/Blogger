@@ -31,6 +31,8 @@ module.exports = {
         console.log(`  Error in blogger.controller.js - create: ${err}`);
         res.status(500).json(err);
       }
+      
+      res.json({success : "New blogger added successfully.", status : 200});
     });
   }
 }

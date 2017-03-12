@@ -6,6 +6,8 @@
 const mongoose = require("mongoose");
 const cli = require("commander");
 
+mongoose.Promise = global.Promise; // http://stackoverflow.com/a/38153706
+
 const PostingSchema = new mongoose.Schema({
   title: String,
   content: String,
@@ -15,6 +17,7 @@ const PostingSchema = new mongoose.Schema({
 const Posting = mongoose.model("Posting", PostingSchema);
 
 // Seed the database if empty or if requested at startup
+//   Thanks to @shauvonm for the remove/create pattern
 Posting.count({}, function(err, count) {
   if (err) {
     throw err;

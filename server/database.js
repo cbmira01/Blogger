@@ -34,6 +34,7 @@ const dbURI = `mongodb://`
   + `${dbConfig.mongoPort}/`
   + `${dbConfig.dbName}`
   ;
+mongoose.Promise = global.Promise; // http://stackoverflow.com/a/38153706
 mongoose.connect(dbURI);
 
 // Import models
