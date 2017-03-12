@@ -9,28 +9,27 @@ module.exports = {
   // Return all bloggers in the database
   list: function(req, res, next) {
     
-    Blogger.find(function(err, files) {
+    Blogger.find(function(err, bloggers) {
       if (err) {
-        console.log(`Error in blogger.controller.js - list: ${err}`);
+        console.log(`  Error in blogger.controller.js - list: ${err}`);
         res.status(500).json(err);
       }
 
-      res.json(files);
+      res.json(bloggers);
     });
   },
   
   // Create a new blogger
   create: function(req, res, next) {
     
-    const newBlogger = req.body.blogger;
+    const newBlogger = req.body; 
+    const newBloggerDocument = new Blogger(newBlogger);    
+    console.log(`  Creating new blogger: \n${JSON.stringify(newBlogger, null, 2)}`);
 
-    const newBloggerModel = new Blogger(newBlogger);
-    newBloggerModel.save(function (err) {
+    newBloggerDocument.save(function (err) {
       if (err) {
-        console.log(`Error in blogger.controller.js - create: ${err}`);
+        console.log(`  Error in blogger.controller.js - create: ${err}`);
         res.status(500).json(err);
-      } else {
-        res.json(newBloggerModel);
       }
     });
   }

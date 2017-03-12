@@ -24,14 +24,14 @@ Blogger.count({}, function(err, count) {
     return ;
   }
 
-  // Delete contents
+  // Delete contents prior to reseeding.
   Blogger.remove({}, function(err) {
     if (err) {
       throw err;
     }
   });
 
-  // Reseed the database to a known state
+  // Reseed the database to a known state.
   const bloggers = require("./blogger.seed.json");
   Blogger.create(bloggers, function(err, newBloggers) {
     if (err) {

@@ -19,10 +19,10 @@ blogApp.controller("CreateBloggerController", [
         })
         .then(
           function(response) { //success
-            $scope.response = response.data;
+            $scope.response = response;
           }, 
           function(response) { //error
-            $log.info(`Problem in CreateBloggerController ${JSON.stringify(response, null, 2)}`);
+            $log.info(`Problem in CreateBloggerController: \n${JSON.stringify(response, null, 2)}`);
             alert(`Problem in CreateBloggerController`);
           }
         )
