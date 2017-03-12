@@ -2,8 +2,9 @@
 blogApp.controller("CreateBloggerController", [
   "$scope",
   "$http",
+  "$location",
   "$log",
-  function ($scope, $http, $log) {
+  function ($scope, $http, $location, $log) {
     
     $scope.createBlogger = function() {
 
@@ -14,7 +15,7 @@ blogApp.controller("CreateBloggerController", [
 
       $http({
         method: "POST",
-        url: "http://localhost:8080/api/createBlogger",
+        url: "http://localhost:8080/api/create-blogger",
         data: newBlogger
         })
         .then(
@@ -26,6 +27,8 @@ blogApp.controller("CreateBloggerController", [
             alert(`Problem in CreateBloggerController`);
           }
         )
+        
+      $location.path("/home");
     }
   }
 ]);

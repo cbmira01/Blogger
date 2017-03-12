@@ -23,8 +23,8 @@ Angular routes:
 /read-post/:guid
   - read a particular post :guid
 
-/add-blogger
-  - add a new blogger
+/create-blogger
+  - create a new blogger
 
 /edit-bloggers
   - list all bloggers and allow edit/delete
@@ -40,11 +40,11 @@ Angular routes:
   - update blogger :name
   - redirect to /home
 
-/add-post
+/create-post
   - add a new blog posting
   - redirect to /list-posts/all
 
-/edit-posts
+/update-posts
   - list all posts and allow edit/delete
   - link to add-post
   - link to /delete-post/:guid

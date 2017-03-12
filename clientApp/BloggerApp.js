@@ -15,8 +15,8 @@ blogApp.config([
       .when("/", {
           redirectTo: "/home"
       })
-      .when("/createBlogger", {
-          templateUrl: "templates/createBlogger.html",
+      .when("/create-blogger", {
+          templateUrl: "templates/create-blogger.html",
           controller: "CreateBloggerController"
       })
       .otherwise({

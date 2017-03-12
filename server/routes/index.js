@@ -17,7 +17,7 @@ router.use(function(req, res, next) {
 });
 
 router.get("/api/home", bloggerController.list);
-router.post("/api/createBlogger", bloggerController.create);
+router.post("/api/create-blogger", bloggerController.create);
 
 router.get("/*", function(req, res){
   // console.log(`  Route passed to Angular: ${req.method}, ${req.path}`);
