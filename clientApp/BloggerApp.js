@@ -15,13 +15,12 @@ blogApp.config([
       .when("/", {
           redirectTo: "/home"
       })
-      .when("/users", {
-          templateUrl: "templates/users.html",
-          controller: "UsersController"
+      .when("/createBlogger", {
+          templateUrl: "templates/createBlogger.html",
+          controller: "CreateBloggerController"
       })
       .otherwise({
-          templateUrl: "templates/unknown.html",
-          controller: "UnknownController"
+          redirectTo: "/home"
       });
 
     // Use the HTML5 History API

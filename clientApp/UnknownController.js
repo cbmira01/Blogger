@@ -1,3 +1,0 @@
-//
-
-blogApp.controller("UnknownController");

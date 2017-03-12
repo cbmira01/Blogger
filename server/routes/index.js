@@ -17,14 +17,7 @@ router.use(function(req, res, next) {
 });
 
 router.get("/api/home", bloggerController.list);
-
-router.get("/api/users", function(req, res) {
-  const myData = {
-    "name": "Here is a USER name",
-    "info": "Here is some USER info..."
-  }
-  res.json(myData);
-});
+router.get("/api/createBlogger", bloggerController.create);
 
 router.get("/*", function(req, res){
   // console.log(`  Route passed to Angular: ${req.method}, ${req.path}`);
