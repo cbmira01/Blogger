@@ -9,24 +9,25 @@ Angular routes:
 -- Unknown routes redirect to /home
 
 /home 
-  - display all bloggers and allow to read their postings
-  - link to /list-posts/:name
+  - nice display of all bloggers
+  - each blogger has a link to /list-posts/:bid
+  - page has a link to /list-posts
 
-/list-posts/all
-  - brief list of all posts from all bloggers in reverse time order
+/list-posts
+  - display briefly all posts from all bloggers in reverse time order
+  - each post has a link to /read-post/:pid
+
+/list-posts/:bid
+  - display briefly all posts from blogger :bid in reverse time order
   - link to /read-post/:guid
 
-/list-posts/:name
-  - brief list of all posts from blogger :name in reverse time order
-  - link to /read-post/:guid
-
-/read-post/:guid
-  - read a particular post :guid
+/read-post/:pid
+  - nice display of post :pid
 
 /create-blogger
   - create a new blogger
 
-/edit-bloggers
+/list-bloggers
   - list all bloggers and allow edit/delete
   - link to /add-blogger
   - link to /delete-blogger/:name
@@ -44,7 +45,7 @@ Angular routes:
   - add a new blog posting
   - redirect to /list-posts/all
 
-/update-posts
+/list-posts
   - list all posts and allow edit/delete
   - link to add-post
   - link to /delete-post/:guid

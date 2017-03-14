@@ -9,8 +9,14 @@
   <body>
     <h2>Deer Park Neighborhood Association Blogs</h2>
 
+    <!-- Top Bar -->
+    <div ng-include="'templates/top-bar.html'"></div>
+
     <!-- Application content delivered here -->
     <div ng-view></div>
+    
+    <!-- Footer -->
+    <div ng-include="'templates/footer.html'"></div>
 
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-route/angular-route.js"></script>
