@@ -1,13 +1,16 @@
 [
   { "name": "Blogger 1", 
-    "slogan": "Slogan 1"
+    "slogan": "Slogan 1",
+    "created_at": "2017-03-15T12:00:00.000Z"
   },
 
   { "name": "Blogger 2", 
-    "slogan": "Slogan 2"
+    "slogan": "Slogan 2",
+    "created_at": "2017-03-15T13:00:00.000Z"
   },
 
   { "name": "Blogger 3", 
-    "slogan": "Slogan 3" 
+    "slogan": "Slogan 3",
+    "created_at": "2017-03-15T14:00:00.000Z"    
   }
 ]
