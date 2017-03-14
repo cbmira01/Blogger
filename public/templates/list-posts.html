@@ -1,0 +1,21 @@
+ 
+<div >  
+  <table>
+    <thead>
+      <tr>
+        <th><pre>ID           </pre></th>
+        <th><pre>Title        </pre></th>
+        <th><pre>Content      </pre></th>
+        <th><pre>created_at   </pre></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="posting in postings">
+        <td>{{posting._id}}</td>
+        <td>{{posting.title}}</td>
+        <td>{{posting.content}}</td>
+        <td>{{posting.created_at}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

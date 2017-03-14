@@ -1,19 +1,21 @@
 
 // Implement CRUD operations for posting model.
 
-const mongoose = require('mongoose');
-const File = require('../../models/posting.model.js');
+const mongoose = require("mongoose");
+const Posting = require("../../models/posting.model.js");
 
 module.exports = {
-  // List all files in the database
+  
+  // Return all postings
   list: function(req, res, next) {
-    Blogger.find(function(err, files) {
+    
+    Posting.find(function(err, postings) {
       if (err) {
-        console.log(err);
+        console.log(`  Error in posting.controller.js - list: ${err}`);
         res.status(500).json(err);
       }
 
-      res.json(files);
+      res.json(postings);
     });
   }
 }

@@ -19,6 +19,10 @@ blogApp.config([
           templateUrl: "templates/create-blogger.html",
           controller: "CreateBloggerController"
       })
+      .when("/list-posts", {
+          templateUrl: "templates/list-posts.html",
+          controller: "ListAllPostsController"
+      })
       .otherwise({
           redirectTo: "/home"
       });
