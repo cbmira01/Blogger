@@ -23,6 +23,10 @@ blogApp.config([
           templateUrl: "templates/list-posts.html",
           controller: "ListAllPostsController"
       })
+      .when("/read-post", {
+          templateUrl: "templates/read-post.html",
+          controller: "ReadAPostController"
+      })      
       .otherwise({
           redirectTo: "/home"
       });

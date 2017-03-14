@@ -17,5 +17,18 @@ module.exports = {
 
       res.json(postings);
     });
-  }
+  },
+  
+  // Return a particular posting
+  read: function(req, res, next) {
+    
+    Posting.find(function(err, postings) {
+      if (err) {
+        console.log(`  Error in posting.controller.js - list: ${err}`);
+        res.status(500).json(err);
+      }
+
+      res.json(postings);
+    });
+  }  
 }
