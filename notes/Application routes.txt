@@ -18,7 +18,7 @@ Angular routes:
   - each posting has a link to /read-post/:postid
 
 /list-posts/:bloggerid
-  - display briefly all postings from blogger :bid in reverse time order
+  - display briefly all postings from blogger :bloggerid in reverse time order
   - link to /read-post/:postid
 
 /read-post/:postid
