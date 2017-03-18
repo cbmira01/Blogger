@@ -34,6 +34,28 @@ module.exports = {
       res.json({success : "New blogger added successfully.", status : 200});
       console.log(`  New blogger added: \n${JSON.stringify(newBlogger, null, 2)}`);
     });
+  },
+
+  // Update an existing blogger
+  update: function(req, res, next) {
+    
+    const aBlogger = req.body; 
+    const aBloggerDocument = new Blogger(aBlogger); 
+
+        console.log(aBlogger);
+      res.json({success : "update route was reached successfully.", status : 200});
+
+   
+
+/*     newBloggerDocument.save(function (err) {
+      if (err) {
+        console.log(`  Error in blogger.controller.js - update: ${err}`);
+        res.status(500).json(err);
+      }
+      
+      res.json({success : "Blogger was updated successfully.", status : 200});
+      console.log(`  Blogger updated: \n${JSON.stringify(aBlogger, null, 2)}`);
+    }); */
   }
 }
   

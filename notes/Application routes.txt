@@ -8,12 +8,12 @@ Angular routes:
 
 -- Unknown routes redirect to /home
 
-@/home 
+/home 
   - nice initial display of all bloggers
   - link to /list-posts/:bloggerid
   - link to /list-posts
 
-@/create-blogger
+/create-blogger
   - create a new blogger
   - redirect to /home
 
@@ -31,11 +31,11 @@ Angular routes:
   - link to /delete-blogger/:bloggerid
   - link to /update-blogger/:bloggerid
 
-@/create-post
+/create-post
   - add a new blog posting
   - redirect to /list-posts
 
-@/read-post/:postid
+/read-post/:postid
   - nice display of posting :postid
 
 /update-post/:postid
@@ -46,7 +46,7 @@ Angular routes:
   - delete posting :postid
   - redirect to /list-posts
 
-@/list-posts
+/list-posts
   - display briefly all postings from all bloggers in reverse time order
   - each posting has a link to /read-post/:postid
   - link to /create-post

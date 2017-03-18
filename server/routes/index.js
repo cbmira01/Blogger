@@ -22,6 +22,8 @@ router.get("/api/home", bloggerController.list);
 router.get("/api/all-posts", postingController.list);
 router.get("/api/read-post/:postid", postingController.read);
 
+router.put("/api/update-blogger/:bloggerid", bloggerController.update);
+
 router.post("/api/create-blogger", bloggerController.create);
 router.post("/api/create-post", postingController.create);
 

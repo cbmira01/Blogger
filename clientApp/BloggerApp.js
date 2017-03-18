@@ -19,22 +19,26 @@ blogApp.config([
           templateUrl: "templates/create-blogger.html",
           controller: "CreateBloggerController"
       })
-      .when("/list-posts", {
-          templateUrl: "templates/list-posts.html",
-          controller: "ListAllPostsController"
+      .when("/update-blogger/:bloggerid", {
+          templateUrl: "templates/update-blogger.html",
+          controller: "UpdateBloggerController"
       })
+      .when("/create-post", {
+          templateUrl: "templates/create-post.html",
+          controller: "CreatePostController"
+      }) 
       .when("/read-post/:postid", {
           templateUrl: "templates/read-post.html",
           controller: "ReadPostController"
       })   
+      .when("/list-posts", {
+          templateUrl: "templates/list-posts.html",
+          controller: "ListAllPostsController"
+      })
       .when("/post-not-found", {
           templateUrl: "templates/post-not-found.html",
           controller: "PostNotFoundController"
-      })  
-      .when("/create-post", {
-          templateUrl: "templates/create-post.html",
-          controller: "CreatePostController"
-      })        
+      })         
       .otherwise({
           redirectTo: "/home"
       });
