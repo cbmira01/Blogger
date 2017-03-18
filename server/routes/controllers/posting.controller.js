@@ -21,8 +21,8 @@ module.exports = {
    
   // Read a particular posting
   read: function(req, res, next) {
-    const pid = req.params.pid;
-    Posting.findById(pid, function(err, posting) {
+    const postid = req.params.postid;
+    Posting.findById(postid, function(err, posting) {
       if (err) {
         console.log(`  Error in posting.controller.js - read: ${err}`);
         res.status(500).json(err);

@@ -23,7 +23,7 @@ blogApp.config([
           templateUrl: "templates/list-posts.html",
           controller: "ListAllPostsController"
       })
-      .when("/read-post/:pid", {
+      .when("/read-post/:postid", {
           templateUrl: "templates/read-post.html",
           controller: "ReadPostController"
       })   

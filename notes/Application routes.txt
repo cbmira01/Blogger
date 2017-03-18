@@ -10,35 +10,36 @@ Angular routes:
 
 /home 
   - nice display of all bloggers
-  - each blogger has a link to /list-posts/:bid
+  - each blogger has a link to /list-posts/:bloggerid
   - page has a link to /list-posts
 
 /list-posts
-  - display briefly all posts from all bloggers in reverse time order
-  - each post has a link to /read-post/:pid
+  - display briefly all postings from all bloggers in reverse time order
+  - each posting has a link to /read-post/:postid
 
-/list-posts/:bid
-  - display briefly all posts from blogger :bid in reverse time order
-  - link to /read-post/:guid
+/list-posts/:bloggerid
+  - display briefly all postings from blogger :bid in reverse time order
+  - link to /read-post/:postid
 
-/read-post/:pid
-  - nice display of post :pid
+/read-post/:postid
+  - nice display of posting :postid
 
 /create-blogger
   - create a new blogger
+  - redirect to /home
 
 /list-bloggers
   - list all bloggers and allow edit/delete
-  - link to /add-blogger
-  - link to /delete-blogger/:name
-  - link to /update-blogger/:name
+  - link to /create-blogger
+  - link to /delete-blogger/:bloggerid
+  - link to /update-blogger/:bloggerid
 
-/delete-blogger/:name
-  - delete blogger :name
+/delete-blogger/:bloggerid
+  - delete blogger :bloggerid
   - redirect to /home
 
-/update-blogger/:name
-  - update blogger :name
+/update-blogger/:bloggerid
+  - update blogger :bloggerid
   - redirect to /home
 
 /create-post
@@ -46,15 +47,18 @@ Angular routes:
   - redirect to /list-posts/all
 
 /list-posts
-  - list all posts and allow edit/delete
-  - link to add-post
-  - link to /delete-post/:guid
-  - link to /update-post/:guid
+  - list all postings and allow edit/delete
+  - link to /create-post
+  - link to /delete-post/:postid
+  - link to /update-post/:postid
 
-/delete-post/:guid
-  - delete blogger :guid
+/delete-post/:postid
+  - delete posting :postid
   - redirect to /home
 
-/update-post/:guid
-  - update post :guid
+/update-post/:postid
+  - update posting :postid
   - redirect to /home
+  
+/post-not-found
+  - handle case of posting not found

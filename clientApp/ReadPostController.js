@@ -5,10 +5,10 @@ blogApp.controller("ReadPostController", [
   "$location", 
   "$route", 
   "$routeParams",
-  function($scope, $http, $location, $route, $routeParams, $log) {      
+  function($scope, $http, $location, $route, $routeParams) {      
     $http({
       method: "GET", 
-      url: `http://localhost:8080/api/read-post/${$routeParams.pid}`
+      url: `http://localhost:8080/api/read-post/${$routeParams.postid}`
     })
       .then(
         function(response) { //success
