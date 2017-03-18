@@ -44,7 +44,7 @@ Angular routes:
 
 /create-post
   - add a new blog posting
-  - redirect to /list-posts/all
+  - redirect to /list-posts
 
 /list-posts
   - list all postings and allow edit/delete

@@ -6,7 +6,7 @@ const Blogger = require("../../models/blogger.model.js");
 
 module.exports = {
   
-  // Return all bloggers in the database
+  // Return a list of all bloggers 
   list: function(req, res, next) {
     
     Blogger.find(function(err, bloggers) {
@@ -24,7 +24,6 @@ module.exports = {
     
     const newBlogger = req.body; 
     const newBloggerDocument = new Blogger(newBlogger);    
-    console.log(`  Creating new blogger: \n${JSON.stringify(newBlogger, null, 2)}`);
 
     newBloggerDocument.save(function (err) {
       if (err) {
@@ -33,6 +32,7 @@ module.exports = {
       }
       
       res.json({success : "New blogger added successfully.", status : 200});
+      console.log(`  New blogger added: \n${JSON.stringify(newBlogger, null, 2)}`);
     });
   }
 }

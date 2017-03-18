@@ -30,7 +30,11 @@ blogApp.config([
       .when("/post-not-found", {
           templateUrl: "templates/post-not-found.html",
           controller: "PostNotFoundController"
-      })      
+      })  
+      .when("/create-post", {
+          templateUrl: "templates/create-post.html",
+          controller: "CreatePostController"
+      })        
       .otherwise({
           redirectTo: "/home"
       });
