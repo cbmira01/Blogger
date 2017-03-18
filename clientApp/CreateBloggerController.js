@@ -16,7 +16,7 @@ blogApp.controller("CreateBloggerController", [
         method: "POST",
         url: "http://localhost:8080/api/create-blogger",
         data: newBlogger
-        })
+      })
         .then(
           function(response) { //success
             $scope.data = response.data;

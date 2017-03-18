@@ -21,7 +21,7 @@ router.use(function(req, res, next) {
 router.get("/api/home", bloggerController.list);
 router.post("/api/create-blogger", bloggerController.create);
 router.get("/api/all-posts", postingController.list);
-router.get("/api/read-post", postingController.read);
+router.get("/api/read-post/:pid", postingController.read);
 
 
 // Remaining routes handled by Angular.

@@ -23,9 +23,13 @@ blogApp.config([
           templateUrl: "templates/list-posts.html",
           controller: "ListAllPostsController"
       })
-      .when("/read-post", {
+      .when("/read-post/:pid", {
           templateUrl: "templates/read-post.html",
-          controller: "ReadAPostController"
+          controller: "ReadPostController"
+      })   
+      .when("/post-not-found", {
+          templateUrl: "templates/post-not-found.html",
+          controller: "PostNotFoundController"
       })      
       .otherwise({
           redirectTo: "/home"

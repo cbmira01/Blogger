@@ -18,17 +18,17 @@ module.exports = {
       res.json(postings);
     });
   },
-  
-  // Return a particular posting
+   
+  // Read a particular posting
   read: function(req, res, next) {
-    
-    Posting.find(function(err, postings) {
+    const pid = req.params.pid;
+    Posting.findById(pid, function(err, posting) {
       if (err) {
-        console.log(`  Error in posting.controller.js - list: ${err}`);
+        console.log(`  Error in posting.controller.js - read: ${err}`);
         res.status(500).json(err);
       }
 
-      res.json(postings);
+      res.json(posting);
     });
-  }  
+  }
 }
