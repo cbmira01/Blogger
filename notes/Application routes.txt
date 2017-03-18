@@ -8,24 +8,21 @@ Angular routes:
 
 -- Unknown routes redirect to /home
 
-/home 
-  - nice display of all bloggers
-  - each blogger has a link to /list-posts/:bloggerid
-  - page has a link to /list-posts
+@/home 
+  - nice initial display of all bloggers
+  - link to /list-posts/:bloggerid
+  - link to /list-posts
 
-/list-posts
-  - display briefly all postings from all bloggers in reverse time order
-  - each posting has a link to /read-post/:postid
-
-/list-posts/:bloggerid
-  - display briefly all postings from blogger :bloggerid in reverse time order
-  - link to /read-post/:postid
-
-/read-post/:postid
-  - nice display of posting :postid
-
-/create-blogger
+@/create-blogger
   - create a new blogger
+  - redirect to /home
+
+/update-blogger/:bloggerid
+  - update blogger :bloggerid
+  - redirect to /home
+
+/delete-blogger/:bloggerid
+  - delete blogger :bloggerid
   - redirect to /home
 
 /list-bloggers
@@ -34,31 +31,31 @@ Angular routes:
   - link to /delete-blogger/:bloggerid
   - link to /update-blogger/:bloggerid
 
-/delete-blogger/:bloggerid
-  - delete blogger :bloggerid
-  - redirect to /home
-
-/update-blogger/:bloggerid
-  - update blogger :bloggerid
-  - redirect to /home
-
-/create-post
+@/create-post
   - add a new blog posting
   - redirect to /list-posts
 
-/list-posts
-  - list all postings and allow edit/delete
-  - link to /create-post
-  - link to /delete-post/:postid
-  - link to /update-post/:postid
-
-/delete-post/:postid
-  - delete posting :postid
-  - redirect to /home
+@/read-post/:postid
+  - nice display of posting :postid
 
 /update-post/:postid
   - update posting :postid
   - redirect to /home
+
+/delete-post/:postid
+  - delete posting :postid
+  - redirect to /list-posts
+
+@/list-posts
+  - display briefly all postings from all bloggers in reverse time order
+  - each posting has a link to /read-post/:postid
+  - link to /create-post
+  - link to /delete-post/:postid
+  - link to /update-post/:postid
+
+/list-posts/:bloggerid
+  - display briefly all postings from blogger :bloggerid in reverse time order
+  - link to /read-post/:postid
   
 /post-not-found
   - handle case of posting not found
