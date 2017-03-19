@@ -1,0 +1,42 @@
+
+WARNING: The examples below are for demonstrating the Blogger app
+  using MongoDB authenticating mode. Do not use these examples in 
+  a production environment without due consideration.
+
+Enable authenticating mode for MongoDB
+  https://docs.mongodb.com/manual/tutorial/enable-authentication/
+
+Create a Mongo admin database and user:
+  use admin
+  db.createUser(
+    {
+      user: "admin",
+      pwd: "adminPassword",
+      roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+    }
+  )
+  
+Create a Mongo project database and user:
+  use bloggerAppDb
+  db.createUser(
+    {
+      user: "bloggerAppDbUser",
+      pwd: "badPassword",
+      roles: [ { role: "readWrite", db: "bloggerAppDb" } ]
+    }
+  )
+
+MongoDB server invocation for Windows:
+  "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --auth
+  "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" 
+
+Mongo client shell invocation for Windows  
+  "C:\Program Files\MongoDB\Server\3.4\bin\mongo.exe" mongo -u "admin" -p "adminPassword" --authenticationDatabase "admin"
+  "C:\Program Files\MongoDB\Server\3.4\bin\mongo.exe" mongo -u "bloggerAppDbUser" -p "badPassword" --authenticationDatabase "bloggerAppDb"
+
+To view collections in bloggerAppDb database:
+  - login Mongo client shell with user credentials
+  - use bloggerAppDb
+  - show collections
+  - db.postings.find()
+  - db.bloggers.find()
