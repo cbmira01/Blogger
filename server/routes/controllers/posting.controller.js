@@ -49,5 +49,37 @@ module.exports = {
       res.json({success : "New posting added successfully.", status : 200});
       console.log(`  New posting added: \n${JSON.stringify(newPosting, null, 2)}`);
     });
-  }
+  },
+
+  // Update an existing posting
+  update: function(req, res, next) {
+    
+    const postingid = req.params.postingid;
+    const updatedPosting = req.body; 
+    
+    Posting.update({ _id : postingid }, { $set: updatedPosting}, function (err, raw) {
+      if (err) {
+        console.log(`  Error in posting.controller.js - update: ${err}`);
+        res.status(500).json(err);
+      }
+
+      res.json({success : "Posting was updated successfully.", status : 200});
+      console.log(`  Posting updated: \n${JSON.stringify(updatedPosting, null, 2)}`);    
+    });
+  },
+
+  // Delete a posting
+  delete: function (req, res, next) {
+
+    const postingid = req.params.postingid;
+
+    Posting.findOneAndRemove({ _id : postingid}, function (err, raw){
+      if (err) {
+        console.log(`  Error in posting.controller.js - update: ${err}`);
+        res.status(500).json(err);
+      }
+
+      res.json({success : "Posting was deleted successfully.", status : 200});
+    });
+  },
 }
