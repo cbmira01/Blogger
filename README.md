@@ -39,8 +39,8 @@ Completed for Code Louisville's Spring 2017 session
         - To demonstrate authenticating mode, use the --auth option
         - The application will work fine without database authentication
     - Start MongoDB client shell, if desired
-    - Start the application: "node index -c <MongoDB-ip> -u <username> -p <password> -r"
-        - <MongoDB-ip> is the network address of your MongoDB instance, likely "localhost"
+    - Start the application: "node index -c MongoDB-ip -u username -p password -r"
+        - MongoDB-ip is the network address of your MongoDB instance, likely "localhost"
         - Use dummy username and password if your MongoDB instance does not authenticate
         - The -r option, if present, will re-seed the the project database from scratch
     - Start a web browser and point it to "localhost:8080/Home"
