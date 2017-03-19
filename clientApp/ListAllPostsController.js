@@ -2,10 +2,13 @@
 blogApp.controller("ListAllPostsController", [
   "$scope", 
   "$http", 
-  function($scope, $http) {
+  "$location", 
+  "$route", 
+  "$routeParams",
+  function($scope, $http, $location, $route, $routeParams) {
     $http({
       method: "GET", 
-      url: "http://localhost:8080/api/all-posts"
+      url: `http://localhost:8080/api/list-posts/${$routeParams.bloggerid}`
     })
       .then(
         function(response) { //success

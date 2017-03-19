@@ -6,17 +6,32 @@ const Posting = require("../../models/posting.model.js");
 
 module.exports = {
   
-  // Return all postings
+  // Return postings by blogger id, or return all
   list: function(req, res, next) {
-    
-    Posting.find(function(err, postings) {
-      if (err) {
-        console.log(`  Error in posting.controller.js - list: ${err}`);
-        res.status(500).json(err);
-      }
 
-      res.json(postings);
-    });
+    const bloggerid = req.params.bloggerid;
+    
+    if (bloggerid.toLowerCase() === "all") {
+      Posting.find(function(err, postings) {
+        if (err) {
+          console.log(`  Error in posting.controller.js - list (all case): ${err}`);
+          res.status(500).json(err);
+        }
+
+        res.json(postings);
+            console.log("   posting, list, by all");  // todo: remove
+      });
+    } else {  //todo: expand posting schema to include blogger id
+      Posting.find(function(err, postings) {
+        if (err) {
+          console.log(`  Error in posting.controller.js - list (all case): ${err}`);
+          res.status(500).json(err);
+        }
+
+        res.json(postings);
+            console.log("   posting, list, by bloggerid");  // todo: remove
+      });
+    }
   },
    
   // Read a particular posting

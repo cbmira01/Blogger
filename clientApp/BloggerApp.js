@@ -35,7 +35,7 @@ blogApp.config([
           templateUrl: "templates/read-post.html",
           controller: "ReadPostController"
       })   
-      .when("/list-posts", {
+      .when("/list-posts/:bloggerid", {
           templateUrl: "templates/list-posts.html",
           controller: "ListAllPostsController"
       })

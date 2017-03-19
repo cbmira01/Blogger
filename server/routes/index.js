@@ -18,7 +18,7 @@ router.use(function(req, res, next) {
 });
 
 // All API routes handled here...
-router.get("/api/all-posts", postingController.list);
+router.get("/api/list-posts/:bloggerid", postingController.list);
 router.get("/api/read-blogger/:bloggerid", bloggerController.read);
 router.get("/api/read-post/:postid", postingController.read);
 router.get("/api/list-bloggers", bloggerController.list);

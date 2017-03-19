@@ -1,4 +1,3 @@
-
 blogApp.controller("HomeController", [
   "$scope", 
   "$http", 

@@ -1,4 +1,3 @@
-
 // Implement CRUD operations for blogger model.
 
 const mongoose = require("mongoose");
@@ -83,4 +82,3 @@ module.exports = {
     });
   },
 }
-  
