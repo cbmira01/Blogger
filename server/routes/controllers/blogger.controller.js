@@ -18,6 +18,21 @@ module.exports = {
       res.json(bloggers);
     });
   },
+
+  // Read a particular blogger
+  read: function(req, res, next) {
+
+    const bloggerid = req.params.bloggerid;
+
+    Blogger.findById(bloggerid, function(err, blogger) {
+      if (err) {
+        console.log(`  Error in blogger.controller.js - read: ${err}`);
+        res.status(500).json(err);
+      }
+
+      res.json(blogger);
+    });
+  },
   
   // Create a new blogger
   create: function(req, res, next) {
@@ -39,23 +54,18 @@ module.exports = {
   // Update an existing blogger
   update: function(req, res, next) {
     
-    const aBlogger = req.body; 
-    const aBloggerDocument = new Blogger(aBlogger); 
-
-        console.log(aBlogger);
-      res.json({success : "update route was reached successfully.", status : 200});
-
-   
-
-/*     newBloggerDocument.save(function (err) {
+    const bloggerid = req.params.bloggerid;
+    const updatedBlogger = req.body; 
+    
+    Blogger.update({ _id: bloggerid }, { $set: updatedBlogger}, function (err, raw) {
       if (err) {
         console.log(`  Error in blogger.controller.js - update: ${err}`);
         res.status(500).json(err);
       }
-      
+
       res.json({success : "Blogger was updated successfully.", status : 200});
-      console.log(`  Blogger updated: \n${JSON.stringify(aBlogger, null, 2)}`);
-    }); */
+      console.log(`  Blogger updated: \n${JSON.stringify(updatedBlogger, null, 2)}`);    
+    });
   }
 }
   

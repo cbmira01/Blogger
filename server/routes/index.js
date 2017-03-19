@@ -20,12 +20,12 @@ router.use(function(req, res, next) {
 // All API routes handled here...
 router.get("/api/home", bloggerController.list);
 router.get("/api/all-posts", postingController.list);
+router.get("/api/read-blogger/:bloggerid", bloggerController.read);
 router.get("/api/read-post/:postid", postingController.read);
-
-router.put("/api/update-blogger/:bloggerid", bloggerController.update);
 
 router.post("/api/create-blogger", bloggerController.create);
 router.post("/api/create-post", postingController.create);
+router.post("/api/update-blogger/:bloggerid", bloggerController.update);
 
 // Remaining routes handled by Angular.
 router.get("/*", function(req, res){

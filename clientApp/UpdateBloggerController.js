@@ -7,17 +7,31 @@ blogApp.controller("UpdateBloggerController", [
   "$routeParams",
   function ($scope, $http, $location, $route, $routeParams) {
     
-    $scope.updateBlogger = function() {
-      
-      const updateBlogger = {
+    // Make sure $scope is filled with current blogger values
+    $http({
+      method: "GET", 
+      url: `http://localhost:8080/api/read-blogger/${$routeParams.bloggerid}`
+    })
+      .then(
+        function(response) { //success
+          $scope.blogger = response.data;
+        }, 
+        function(response) { //error
+          alert(`Problem in UpdateBloggerController (GET)`);
+        }
+      )
+
+    // Send any updated blogger values
+    $scope.updateBlogger = function() {      
+      const updatedBlogger = {
         name: $scope.name,
         slogan: $scope.slogan
       };
 
       $http({
-        method: "PUT",
+        method: "POST",
         url: `http://localhost:8080/api/update-blogger/${$routeParams.bloggerid}`,
-        data: updateBlogger
+        data: updatedBlogger
       })
         .then(
           function(response) { //success
