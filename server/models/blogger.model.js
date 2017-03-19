@@ -6,7 +6,9 @@
 const mongoose = require("mongoose");
 const cli = require("commander");
 
-mongoose.Promise = global.Promise; // http://stackoverflow.com/a/38153706
+// Silence Mongoose mpromise deprecation warning
+//    http://stackoverflow.com/a/38153706
+mongoose.Promise = global.Promise; 
 
 const BloggerSchema = new mongoose.Schema({
   name: String,

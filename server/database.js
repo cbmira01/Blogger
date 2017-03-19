@@ -27,14 +27,15 @@ if ( dbConfig.mongoUsesAuth && !haveAuthInfo ) {
   process.exit();
 }
 
-const dbURI = `mongodb://`
-  + `${cli.username}:`
-  + `${cli.password}@`
-  + `${cli.connect}:`
-  + `${dbConfig.mongoPort}/`
-  + `${dbConfig.dbName}`
-  ;
-mongoose.Promise = global.Promise; // http://stackoverflow.com/a/38153706
+if ( dbConfig.mongoUsesAuth ) {
+  var dbURI = `mongodb://${cli.username}:${cli.password}@${cli.connect}:${dbConfig.mongoPort}/${dbConfig.dbName}`;
+} else {
+  var dbURI = `mongodb://${cli.connect}:${dbConfig.mongoPort}/${dbConfig.dbName}`;
+}
+
+// Silence Mongoose mpromise deprecation warning
+//    http://stackoverflow.com/a/38153706
+mongoose.Promise = global.Promise; 
 mongoose.connect(dbURI);
 
 // Import models

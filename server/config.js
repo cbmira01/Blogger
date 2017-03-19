@@ -10,7 +10,7 @@ const config = {
   // MongoDB configuration
   dbName: "bloggerAppDb",
   mongoPort: "27017",
-  mongoUsesAuth: true,
+  mongoUsesAuth: false,
 }
 
 module.exports = config;
