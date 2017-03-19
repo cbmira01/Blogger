@@ -1,8 +1,11 @@
 
-blogApp.controller("HomeController", [
+blogApp.controller("ListBloggersController", [
   "$scope", 
   "$http", 
-  function($scope, $http) {
+  "$location", 
+  "$route", 
+  "$routeParams",
+  function($scope, $http, $location, $route, $routeParams) {
     $http({
       method: "GET", 
       url: "http://localhost:8080/api/list-bloggers"
@@ -12,7 +15,7 @@ blogApp.controller("HomeController", [
           $scope.bloggers = response.data;
         }, 
         function(response) { //error
-          alert(`Problem in HomeController`);
+          alert(`Problem in ListBloggersController`);
         }
       )
     }

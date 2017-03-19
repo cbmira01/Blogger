@@ -24,8 +24,8 @@ blogApp.controller("UpdateBloggerController", [
     // Send any updated blogger values
     $scope.updateBlogger = function() {      
       const updatedBlogger = {
-        name: $scope.name,
-        slogan: $scope.slogan
+        name: $scope.newname,
+        slogan: $scope.newslogan
       };
 
       $http({
@@ -37,7 +37,7 @@ blogApp.controller("UpdateBloggerController", [
           function(response) { //success
             $scope.data = response.data;
             $scope.status = response.status;
-            $location.path("/home");
+            $location.path("/list-bloggers");
           }, 
           function(response) { //error
             $scope.data = response.data || "Request failed";

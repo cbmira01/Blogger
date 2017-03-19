@@ -19,6 +19,10 @@ blogApp.config([
           templateUrl: "templates/create-blogger.html",
           controller: "CreateBloggerController"
       })
+      .when("/list-bloggers", {
+          templateUrl: "templates/list-bloggers.html",
+          controller: "ListBloggersController"
+      })
       .when("/update-blogger/:bloggerid", {
           templateUrl: "templates/update-blogger.html",
           controller: "UpdateBloggerController"

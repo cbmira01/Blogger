@@ -1,21 +1,22 @@
-
 <div>
 
   <h3>Update a Blogger</h3>
   
   <div>
-    <h4>Display blogger id here</h4>
+    <h4>{{_id}}</h4>
   </div>
 
   <form>
     <div class="form-group">
-        <label>Blogger's Name</label>
-        <input type="text" class="form-control" placeholder="{{name}}" ng-model="name" required>
+        <label>Blogger's Name: {{blogger.name}}
+          <input type="text" class="form-control" ng-model="newname" required>
+        </label>
     </div>
 
     <div class="form-group">
-        <label for="company">Blogger's Slogan</label>
-        <input type="text" class="form-control" placeholder="{{slogan}}" ng-model="slogan" required>
+        <label for="company">Blogger's Slogan: {{blogger.slogan}}
+          <input type="text" class="form-control" ng-model="newslogan" required>
+        </label>
     </div>
 
     <a href="" ng-click="updateBlogger()">Update Blogger</a>
