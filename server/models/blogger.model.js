@@ -13,7 +13,10 @@ mongoose.Promise = global.Promise;
 const BloggerSchema = new mongoose.Schema({
   name: String,
   slogan: String,
+  resume: String,
+  photolink: String,
   created_at: { type: Date, default: Date.now },
+  bloggerguid: String,
 });
 
 const Blogger = mongoose.model("Blogger", BloggerSchema);

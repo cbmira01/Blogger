@@ -11,9 +11,12 @@ const cli = require("commander");
 mongoose.Promise = global.Promise; 
 
 const PostingSchema = new mongoose.Schema({
+  created_at: { type: Date, default: Date.now },
+  byname: String,
+  byguid: String,
   title: String,
   content: String,
-  created_at: { type: Date, default: Date.now },
+  imagelink: String,
 });
 
 const Posting = mongoose.model("Posting", PostingSchema);

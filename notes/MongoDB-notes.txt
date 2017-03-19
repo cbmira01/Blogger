@@ -38,5 +38,5 @@ To view collections in bloggerAppDb database:
   - login Mongo client shell with user credentials
   - use bloggerAppDb
   - show collections
-  - db.postings.find()
-  - db.bloggers.find()
+  - db.postings.find().pretty()
+  - db.bloggers.find().pretty()
