@@ -1,3 +1,4 @@
+"use strict";
 
 blogApp.controller("ListAllPostsController", [
   "$scope", 
@@ -17,6 +18,6 @@ blogApp.controller("ListAllPostsController", [
         function(response) { //error
           alert(`Problem in ListAllPostsController`);
         }
-      )
+      );
     }
 ]);

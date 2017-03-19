@@ -1,3 +1,4 @@
+"use strict";
 
 blogApp.controller("CreatePostController", [
   "$scope",

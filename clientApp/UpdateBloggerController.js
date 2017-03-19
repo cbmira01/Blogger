@@ -1,3 +1,4 @@
+"use strict";
 
 blogApp.controller("UpdateBloggerController", [
   "$scope",
@@ -19,7 +20,7 @@ blogApp.controller("UpdateBloggerController", [
         function(response) { //error
           $location.path("/page-not-found");
         }
-      )
+      );
 
     // Send any updated blogger values
     $scope.updateBlogger = function() {      

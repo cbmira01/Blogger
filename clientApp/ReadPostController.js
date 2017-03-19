@@ -1,3 +1,4 @@
+"use strict";
 
 blogApp.controller("ReadPostController", [
   "$scope", 
@@ -17,6 +18,6 @@ blogApp.controller("ReadPostController", [
         function(response) { //error
           $location.path("/page-not-found");
         }
-      )
+      );
     }
 ]);

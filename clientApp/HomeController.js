@@ -1,3 +1,5 @@
+"use strict";
+
 blogApp.controller("HomeController", [
   "$scope", 
   "$http", 
@@ -13,6 +15,6 @@ blogApp.controller("HomeController", [
         function(response) { //error
           alert(`Problem in HomeController`);
         }
-      )
+      );
     }
 ]);
