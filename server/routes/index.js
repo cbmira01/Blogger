@@ -26,6 +26,7 @@ router.get("/api/read-post/:postid", postingController.read);
 router.post("/api/create-blogger", bloggerController.create);
 router.post("/api/create-post", postingController.create);
 router.post("/api/update-blogger/:bloggerid", bloggerController.update);
+router.post("/api/delete-blogger/:bloggerid", bloggerController.delete);
 
 // Remaining routes handled by Angular.
 router.get("/*", function(req, res){

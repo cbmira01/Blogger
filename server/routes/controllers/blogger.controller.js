@@ -57,7 +57,7 @@ module.exports = {
     const bloggerid = req.params.bloggerid;
     const updatedBlogger = req.body; 
     
-    Blogger.update({ _id: bloggerid }, { $set: updatedBlogger}, function (err, raw) {
+    Blogger.update({ _id : bloggerid }, { $set: updatedBlogger}, function (err, raw) {
       if (err) {
         console.log(`  Error in blogger.controller.js - update: ${err}`);
         res.status(500).json(err);
@@ -66,6 +66,21 @@ module.exports = {
       res.json({success : "Blogger was updated successfully.", status : 200});
       console.log(`  Blogger updated: \n${JSON.stringify(updatedBlogger, null, 2)}`);    
     });
-  }
+  },
+
+  // Delete a blogger
+  delete: function (req, res, next) {
+
+    const bloggerid = req.params.bloggerid;
+
+    Blogger.findOneAndRemove({ _id : bloggerid}, function (err, raw){
+      if (err) {
+        console.log(`  Error in blogger.controller.js - update: ${err}`);
+        res.status(500).json(err);
+      }
+
+      res.json({success : "Blogger was deleted successfully.", status : 200});
+    });
+  },
 }
   
