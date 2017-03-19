@@ -3,20 +3,22 @@
   <h3>Update a Blogger</h3>
   
   <div>
-    <h4>{{_id}}</h4>
+    <h4>{{blogger._id}}</h4>
   </div>
 
   <form>
-    <div class="form-group">
-        <label>Blogger's Name: {{blogger.name}}
-          <input type="text" class="form-control" ng-model="newname" required>
-        </label>
+    <div>
+      Name: {{blogger.name}}
+      <div>
+        <input type="text" ng-model="newname">
+      <div>
     </div>
 
-    <div class="form-group">
-        <label for="company">Blogger's Slogan: {{blogger.slogan}}
-          <input type="text" class="form-control" ng-model="newslogan" required>
-        </label>
+    <div>
+      Slogan: {{blogger.slogan}}
+      <div>
+        <input type="text" ng-model="newslogan">
+      <div>
     </div>
 
     <a href="" ng-click="updateBlogger()">Update Blogger</a>

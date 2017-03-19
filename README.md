@@ -51,6 +51,6 @@ Completed for Code Louisville's Spring 2017 session
 - Application highlights
     - Errors and route requests are logged to the Node-js console
     - "npm build" target can be used to rebuild the minimized Angular app after alterations
-    - The Angular library is unminimized to allow for clearer error reporting
+    - The AngularJS library is unminimized to allow for clearer error reporting
 
 ## Comments are welcome! Send to: Calvin Miracle, cbmira01@gmail.com

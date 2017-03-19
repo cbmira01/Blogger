@@ -17,6 +17,21 @@ module.exports = {
       res.json(bloggers);
     });
   },
+
+  // Read a particular blogger
+  read: function(req, res, next) {
+
+    const bloggerid = req.params.bloggerid;
+
+    Blogger.findById(bloggerid, function(err, blogger) {
+      if (err) {
+        console.log(`  Error in blogger.controller.js - read: ${err}`);
+        res.status(500).json(err);
+      }
+
+      res.json(blogger);
+    });
+  },
  
   // Create a new blogger
   create: function(req, res, next) {

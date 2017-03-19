@@ -1,6 +1,6 @@
 "use strict";
 
-blogApp.controller("UpdateBloggerController", [
+blogApp.controller("UpdatePostController", [
   "$scope",
   "$http",
   "$location",
@@ -8,10 +8,10 @@ blogApp.controller("UpdateBloggerController", [
   "$routeParams",
   function ($scope, $http, $location, $route, $routeParams) {
     
-    // Make sure $scope contains current blogger values
+    // Make sure $scope contains current post values
     $http({
       method: "GET", 
-      url: `http://localhost:8080/api/read-blogger/${$routeParams.bloggerid}`
+      url: `http://localhost:8080/api/read-post/${$routeParams.postid}`
     })
       .then(
         function(response) { //success
@@ -22,24 +22,24 @@ blogApp.controller("UpdateBloggerController", [
         }
       );
 
-    // Send any updated blogger values
-    $scope.updateBlogger = function() { 
-     
-      const updatedBlogger = {
-        name: $scope.newname,
-        slogan: $scope.newslogan
+    // Send any updated posting values
+    $scope.updatePost = function() {
+
+      const updatedPosting = {
+        name: $scope.newtitle,
+        slogan: $scope.newcontent
       };
 
       $http({
         method: "POST",
-        url: `http://localhost:8080/api/update-blogger/${$routeParams.bloggerid}`,
-        data: updatedBlogger
+        url: `http://localhost:8080/api/update-post/${$routeParams.postid}`,
+        data: updatedPosting
       })
         .then(
           function(response) { //success
             $scope.data = response.data;
             $scope.status = response.status;
-            $location.path("/list-bloggers");
+            $location.path("/list-posts/all");
           }, 
           function(response) { //error
             $scope.data = response.data || "Request failed";

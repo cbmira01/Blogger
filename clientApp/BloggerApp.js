@@ -18,25 +18,29 @@ blogApp.config([
           templateUrl: "templates/create-blogger.html",
           controller: "CreateBloggerController"
       })
+      .when("/create-post", {
+          templateUrl: "templates/create-post.html",
+          controller: "CreatePostController"
+      })
+      .when("/read-post/:postid", {
+          templateUrl: "templates/read-post.html",
+          controller: "ReadPostController"
+      })
       .when("/list-bloggers", {
           templateUrl: "templates/list-bloggers.html",
           controller: "ListBloggersController"
+      })   
+      .when("/list-posts/:bloggerid", {
+          templateUrl: "templates/list-posts.html",
+          controller: "ListPostsController"
       })
       .when("/update-blogger/:bloggerid", {
           templateUrl: "templates/update-blogger.html",
           controller: "UpdateBloggerController"
       })
-      .when("/create-post", {
-          templateUrl: "templates/create-post.html",
-          controller: "CreatePostController"
-      }) 
-      .when("/read-post/:postid", {
-          templateUrl: "templates/read-post.html",
-          controller: "ReadPostController"
-      })   
-      .when("/list-posts/:bloggerid", {
-          templateUrl: "templates/list-posts.html",
-          controller: "ListAllPostsController"
+      .when("/update-post/:postid", {
+          templateUrl: "templates/update-post.html",
+          controller: "UpdatePostController"
       })
       .when("/page-not-found", {
           templateUrl: "templates/page-not-found.html",

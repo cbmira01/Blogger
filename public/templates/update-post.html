@@ -1,0 +1,24 @@
+<div>
+
+  <h3>Update a Post</h3>
+  
+  <div>
+    <h4>{{posting._id}}</h4>
+  </div>
+
+  <form>
+    <div class="form-group">
+        <label>Title: {{posting.title}}
+          <input type="text" class="form-control" ng-model="newtitle" required>
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>Content: {{posting.content}}
+          <input type="text" class="form-control" ng-model="newcontent" required>
+        </label>
+    </div>
+
+    <a href="" ng-click="updatePost()">Update Post</a>
+  </form>
+</div>
