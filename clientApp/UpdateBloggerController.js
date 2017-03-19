@@ -17,7 +17,7 @@ blogApp.controller("UpdateBloggerController", [
           $scope.blogger = response.data;
         }, 
         function(response) { //error
-          alert(`Problem in UpdateBloggerController (GET)`);
+          $location.path("/page-not-found");
         }
       )
 

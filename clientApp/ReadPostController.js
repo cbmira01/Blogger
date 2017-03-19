@@ -15,7 +15,7 @@ blogApp.controller("ReadPostController", [
           $scope.posting = response.data;        
         }, 
         function(response) { //error
-          $location.path("/post-not-found");
+          $location.path("/page-not-found");
         }
       )
     }

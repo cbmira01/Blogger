@@ -35,9 +35,9 @@ blogApp.config([
           templateUrl: "templates/list-posts.html",
           controller: "ListAllPostsController"
       })
-      .when("/post-not-found", {
-          templateUrl: "templates/post-not-found.html",
-          controller: "PostNotFoundController"
+      .when("/page-not-found", {
+          templateUrl: "templates/page-not-found.html",
+          controller: "PageNotFoundController"
       })         
       .otherwise({
           redirectTo: "/home"
