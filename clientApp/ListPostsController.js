@@ -7,6 +7,7 @@ blogApp.controller("ListPostsController", [
   "$route", 
   "$routeParams",
   function($scope, $http, $location, $route, $routeParams) {
+
     $http({
       method: "GET", 
       url: `http://localhost:8080/api/list-posts/${$routeParams.bloggerid}`
@@ -23,7 +24,7 @@ blogApp.controller("ListPostsController", [
     $scope.deletePost = function(postid) {
       $http({
         method: "POST",
-        url: `http://localhost:8080/api/delete-blogger/${postid}`
+        url: `http://localhost:8080/api/delete-post/${postid}`
       })
         .then(
           function(response) { //success
@@ -35,7 +36,7 @@ blogApp.controller("ListPostsController", [
             $scope.data = response.data || "Request failed";
             $scope.status = response.status;
           }
-        );        
-    }
+        );
+    };
   }
 ]);

@@ -7,7 +7,7 @@ blogApp.controller("UpdatePostController", [
   "$route", 
   "$routeParams",
   function ($scope, $http, $location, $route, $routeParams) {
-    
+
     // Make sure $scope contains current post values
     $http({
       method: "GET", 
@@ -15,7 +15,7 @@ blogApp.controller("UpdatePostController", [
     })
       .then(
         function(response) { //success
-          $scope.blogger = response.data;
+          $scope.posting = response.data;
         }, 
         function(response) { //error
           $location.path("/page-not-found");
@@ -26,8 +26,8 @@ blogApp.controller("UpdatePostController", [
     $scope.updatePost = function() {
 
       const updatedPosting = {
-        name: $scope.newtitle,
-        slogan: $scope.newcontent
+        title: $scope.newtitle,
+        content: $scope.newcontent
       };
 
       $http({

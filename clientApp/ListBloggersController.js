@@ -37,6 +37,6 @@ blogApp.controller("ListBloggersController", [
             $scope.status = response.status;
           }
         );        
-    }
+    };
   }
 ]);

@@ -12,6 +12,7 @@ module.exports = {
     const bloggerid = req.params.bloggerid;
     
     if (bloggerid.toLowerCase() === "all") {
+
       Posting.find(function(err, postings) {
         if (err) {
           console.log(`  Error in posting.controller.js - list (all case): ${err}`);
@@ -19,17 +20,18 @@ module.exports = {
         }
 
         res.json(postings);
-            console.log("   posting, list, by all");  // todo: remove
+            console.log("   list postings by all");  // todo: remove
       });
     } else {  //todo: expand posting schema to include blogger id
+
       Posting.find(function(err, postings) {
         if (err) {
-          console.log(`  Error in posting.controller.js - list (all case): ${err}`);
+          console.log(`  Error in posting.controller.js - list (by-bloggerid case): ${err}`);
           res.status(500).json(err);
         }
 
         res.json(postings);
-            console.log("   posting, list, by bloggerid");  // todo: remove
+            console.log("   list postings by bloggerid");  // todo: remove
       });
     }
   },
@@ -69,10 +71,10 @@ module.exports = {
   // Update an existing posting
   update: function(req, res, next) {
     
-    const postingid = req.params.postingid;
+    const postid = req.params.postid;
     const updatedPosting = req.body; 
     
-    Posting.update({ _id : postingid }, { $set: updatedPosting}, function (err, raw) {
+    Posting.update({ _id : postid }, { $set: updatedPosting}, function (err, raw) {
       if (err) {
         console.log(`  Error in posting.controller.js - update: ${err}`);
         res.status(500).json(err);
@@ -86,9 +88,9 @@ module.exports = {
   // Delete a posting
   delete: function (req, res, next) {
 
-    const postingid = req.params.postingid;
+    const postid = req.params.postid;
 
-    Posting.findOneAndRemove({ _id : postingid}, function (err, raw){
+    Posting.findOneAndRemove({ _id : postid}, function (err, raw){
       if (err) {
         console.log(`  Error in posting.controller.js - update: ${err}`);
         res.status(500).json(err);
