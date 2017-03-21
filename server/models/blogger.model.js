@@ -38,7 +38,7 @@ Blogger.count({}, function(err, count) {
       throw err;
     }
     
-    // Reseed the database to a known state.
+    // Reseed the blogger collection to a known state.
     const bloggers = require("./blogger.seed.json");
     Blogger.create(bloggers, function(err, newBloggers) {
       if (err) {

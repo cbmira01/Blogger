@@ -38,7 +38,7 @@ Posting.count({}, function(err, count) {
       throw err;
     }
     
-    // Reseed the database to a known state.
+    // Reseed the posting collection to a known state.
     const postings = require("./posting.seed.json");
     Posting.create(postings, function(err, newPostings) {
       if (err) {
