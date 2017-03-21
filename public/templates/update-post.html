@@ -1,10 +1,6 @@
 <div>
 
   <h3>Update a Post</h3>
-  
-  <div>
-    <h4>{{posting._id}}</h4>
-  </div>
 
   <form>
     <div>
@@ -14,7 +10,7 @@
           {{posting.title}} 
         </div>
         <div>
-          <textarea name="textarea" ng-model="{{newtitle}}"></textarea>
+          <textarea name="textarea" ng-model="newtitle"></textarea>
         </div>
       </div>
 
@@ -24,7 +20,7 @@
           {{posting.content}}
         </div>
         <div>
-          <textarea name="textarea" ng-model="{{newcontent}}"></textarea>
+          <textarea name="textarea" ng-model="newcontent"></textarea>
         </div>
       </div>
 
