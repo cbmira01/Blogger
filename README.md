@@ -31,26 +31,29 @@ Completed for Code Louisville's Spring 2017 session
         - Set up the application user and database
         - Set up CLI scripts to assist server and client shell startup
         - For prepared examples, refer to ./notes/MongoDB-notes.txt
-        - Refer to the MongoDB website for installation advice
+        - Refer to the MongoDB documentation for installation advice
     - Download the application into a preferred folder
         - Use Git clone, or download and unpack the ZIP file
     - Retrieve npm modules and libraries
         - Issue the command "npm install" in the application folder
 - Start the application
-    - Start MongoDB server
-        - Can be run in its own CLI, or as a background service
+    - Start the MongoDB server
+        - MongoDB can be run in its own CLI, or as a background service
         - To demonstrate MongoDB authentication, use the --auth option 
-        - Configure ./server/config.js to agree with the authentication option
+        - Configure "mongoUsesAuth" in ./server/config.js to agree with the authentication option
         - MongoDB authentication is not required to run the application
-    - Start MongoDB client shell, if desired
-    - Start the application: "node index -c mongodbip -u username -p password -r"
-        - mongodbip is the network address of your MongoDB server, most likely "localhost"
-        - If MongoDB requires authentication, application startup will require a username and password
-        - The -r option, if present, will re-seed the the application database from scratch
+    - Start the MongoDB client shell, if desired
+    - Start the Blogger application
+        - Open a command-line window in the application root
+        - Issue "node index -c mongodbip -u username -p password -r"
+            - "mongodbip" is the network address of your MongoDB server, most likely "localhost"
+            - If MongoDB requires authentication, application startup will require a username and password
+            - Use (optionally) "-r empty" or "-r seed" to reset the database
     - Start a web browser and point it to "localhost:8080/Home"
 - Application highlights
     - Errors and route requests are logged to the Node-js console
     - "npm build" target can be used to rebuild the minimized Angular app after alterations
     - The AngularJS library is unminimized to allow for clearer error reporting
+    - Database can retained from a previous run, reset to empty, or seeded with bloggers and postings.
 
 ## Comments are welcome! Send to: Calvin Miracle, cbmira01@gmail.com

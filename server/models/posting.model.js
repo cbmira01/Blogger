@@ -21,33 +21,31 @@ const PostingSchema = new mongoose.Schema({
 
 const Posting = mongoose.model("Posting", PostingSchema);
 
-// Seed the database if empty or if requested at startup
+// Reset the posting collection to a known state, seeded or empty.
 //   Thanks to @shauvonm for the remove/create pattern
 Posting.count({}, function(err, count) {
   if (err) {
     throw err;
   }
 
-  if ( !cli.reseed && !(count == 0)) {
-    return ;
-  }
-
-  // Delete contents prior to reseeding.
-  Posting.remove({}, function(err) {
-    if (err) {
-      throw err;
-    }
-    
-    // Reseed the posting collection to a known state.
-    const postings = require("./posting.seed.json");
-    Posting.create(postings, function(err, newPostings) {
+  if (cli.reset) {
+    Posting.remove({}, function(err) {
       if (err) {
         throw err;
       }
-    });
-    
-    console.log(`Posting collection was re-seeded...`);
-  });
+      
+      if (cli.reset === "seed") {
+        const postings = require("./posting.seed.json");
+        Posting.create(postings, function(err, newPostings) {
+          if (err) {
+            throw err;
+          }
+          console.log("Posting collection was re-seeded.");    
+        }); 
+      }
+      console.log("Posting collection was deleted.");    
+    }); 
+  }
 });
 
 module.exports = Posting

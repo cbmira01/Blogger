@@ -5,15 +5,15 @@
 "use strict";
 
 const mongoose = require("mongoose");
-const cli = require("commander");
 const dbConfig = require("./config");
+const cli = require("commander");
 
 // Find MongoDB connection info on the command line
 cli
   .option("-c, --connect <connect>", "database connection address")
   .option("-u, --username <username>", "database username")
   .option("-p, --password <password>", "database password")
-  .option("-r, --reseed", "reseed database, if present")
+  .option("-r, --reset <seed_option>", "reset initial database to 'empty' or 'seed'")
   .parse(process.argv);
 
 if ( !cli.connect ) {
@@ -38,7 +38,7 @@ if ( dbConfig.mongoUsesAuth ) {
 mongoose.Promise = global.Promise; 
 mongoose.connect(dbURI);
 
-// Import models
+// Import the models
 require("./models/blogger.model.js");
 require("./models/posting.model.js");
 

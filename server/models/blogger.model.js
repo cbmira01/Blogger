@@ -21,33 +21,31 @@ const BloggerSchema = new mongoose.Schema({
 
 const Blogger = mongoose.model("Blogger", BloggerSchema);
 
-// Seed the database if empty or if requested at startup
+// Reset the blogger collection to a known state, seeded or empty.
 //   Thanks to @shauvonm for the remove/create pattern
 Blogger.count({}, function(err, count) {
   if (err) {
     throw err;
   }
 
-  if ( !cli.reseed && !(count == 0)) {
-    return ;
-  }
-
-  // Delete contents prior to reseeding.
-  Blogger.remove({}, function(err) {
-    if (err) {
-      throw err;
-    }
-    
-    // Reseed the blogger collection to a known state.
-    const bloggers = require("./blogger.seed.json");
-    Blogger.create(bloggers, function(err, newBloggers) {
+  if (cli.reset) {
+    Blogger.remove({}, function(err) {
       if (err) {
         throw err;
       }
+      
+      if (cli.reset === "seed") {
+        const bloggers = require("./blogger.seed.json");
+        Blogger.create(bloggers, function(err, newBloggers) {
+          if (err) {
+            throw err;
+          }
+          console.log("Blogger collection was re-seeded.");    
+        }); 
+      }
+      console.log("Blogger collection was deleted.");    
     }); 
-
-    console.log(`Blogger collection was re-seeded...`);    
-  });  
+  }
 });
 
 module.exports = Blogger
