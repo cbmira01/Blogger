@@ -18,20 +18,17 @@ module.exports = {
           console.log(`  Error in posting.controller.js - list (all case): ${err}`);
           res.status(500).json(err);
         }
-
         res.json(postings);
-            console.log("   list postings by all");  // todo: remove
       });
-    } else {  //todo: expand posting schema to include blogger id
+    } 
+    else {  
 
-      Posting.find(function(err, postings) {
+      Posting.find({ "byguid": bloggerid}, function(err, postings) {
         if (err) {
           console.log(`  Error in posting.controller.js - list (by-bloggerid case): ${err}`);
           res.status(500).json(err);
         }
-
         res.json(postings);
-            console.log("   list postings by bloggerid");  // todo: remove
       });
     }
   },
@@ -46,7 +43,6 @@ module.exports = {
         console.log(`  Error in posting.controller.js - read: ${err}`);
         res.status(500).json(err);
       }
-
       res.json(posting);
     });
   },
@@ -62,7 +58,6 @@ module.exports = {
         console.log(`  Error in posting.controller.js - create: ${err}`);
         res.status(500).json(err);
       }
-      
       res.json({success : "New posting added successfully.", status : 200});
       console.log(`  New posting added: \n${JSON.stringify(newPosting, null, 2)}`);
     });
@@ -95,7 +90,6 @@ module.exports = {
         console.log(`  Error in posting.controller.js - update: ${err}`);
         res.status(500).json(err);
       }
-
       res.json({success : "Posting was deleted successfully.", status : 200});
     });
   },

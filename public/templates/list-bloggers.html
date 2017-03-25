@@ -14,7 +14,7 @@
       <tr ng-repeat="blogger in bloggers">
         <td>{{blogger.name}}</td>
         <td>{{blogger.slogan}}</td>
-        <td><a href="/update-blogger/{{blogger._id}}">Read all posts</a></td>
+        <td><a href="/list-posts/{{blogger._id}}">Read posts by blogger</a></td>
         <td><a href="/update-blogger/{{blogger._id}}">Update</a></td>
         <td><a href="" ng-click="deleteBlogger(blogger._id)">Delete</a></td>
       </tr>

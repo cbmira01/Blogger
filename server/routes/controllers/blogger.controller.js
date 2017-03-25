@@ -13,7 +13,6 @@ module.exports = {
         console.log(`  Error in blogger.controller.js - list: ${err}`);
         res.status(500).json(err);
       }
-
       res.json(bloggers);
     });
   },
@@ -28,7 +27,6 @@ module.exports = {
         console.log(`  Error in blogger.controller.js - read: ${err}`);
         res.status(500).json(err);
       }
-
       res.json(blogger);
     });
   },
@@ -77,7 +75,6 @@ module.exports = {
         console.log(`  Error in blogger.controller.js - update: ${err}`);
         res.status(500).json(err);
       }
-
       res.json({success : "Blogger was deleted successfully.", status : 200});
     });
   },
