@@ -1,5 +1,9 @@
 "use strict";
 
+// Definition of the application's AngularJS module and routes
+// begins here. HTML5 history option is used to eliminate #hash
+// symbols in route URLs.
+
 var blogApp = angular.module("blogApp", ["ngRoute"]);
 
 blogApp.config([

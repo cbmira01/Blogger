@@ -1,13 +1,15 @@
 "use strict";
 
+// CreateBloggerController facilitates creation of a new blogger.
+// On success, this controller routes to /home
+
 blogApp.controller("CreateBloggerController", [
   "$scope",
   "$http",
   "$location",
   function ($scope, $http, $location) {
     
-    $scope.createBlogger = function() {
-      
+    $scope.createBlogger = function() {      
       const newBlogger = {
         name: $scope.bloggerName,
         slogan: $scope.bloggerSlogan

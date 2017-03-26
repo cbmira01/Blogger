@@ -1,5 +1,9 @@
 "use strict";
 
+// UpdateBloggerController fills $scope with a list of all current bloggers,
+// then sends a possibly updated blogger back to the API. 
+// On success, this controller routes to /list-bloggers
+
 blogApp.controller("UpdateBloggerController", [
   "$scope",
   "$http",
@@ -8,7 +12,6 @@ blogApp.controller("UpdateBloggerController", [
   "$routeParams",
   function ($scope, $http, $location, $route, $routeParams) {
     
-    // Make sure $scope contains current blogger values
     $http({
       method: "GET", 
       url: `http://localhost:8080/api/read-blogger/${$routeParams.bloggerid}`
@@ -22,9 +25,7 @@ blogApp.controller("UpdateBloggerController", [
         }
       );
 
-    // Send any updated blogger values
-    $scope.updateBlogger = function() { 
-     
+    $scope.updateBlogger = function() {      
       const updatedBlogger = {
         name: $scope.newname,
         slogan: $scope.newslogan

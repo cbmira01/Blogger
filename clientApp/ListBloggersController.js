@@ -1,5 +1,9 @@
 "use strict";
 
+// ListBloggersController fills $scope with a list of current bloggers,
+// and can facilitate the selection of a blogger to delete. 
+// On success, the current route is reloaded.
+
 blogApp.controller("ListBloggersController", [
   "$scope", 
   "$http", 
@@ -17,7 +21,7 @@ blogApp.controller("ListBloggersController", [
           $scope.bloggers = response.data;
         }, 
         function(response) { //error
-          alert(`Problem in ListBloggersController`);
+          alert("Problem in ListBloggersController");
         }
       );
 

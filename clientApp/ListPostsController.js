@@ -1,5 +1,9 @@
 "use strict";
 
+// ListPostsController fills $scope with a list of all or selected 
+// posts, and can facilitate the selection of a blogger to delete. 
+// On success, the current route is reloaded.
+
 blogApp.controller("ListPostsController", [
   "$scope", 
   "$http", 
@@ -17,7 +21,7 @@ blogApp.controller("ListPostsController", [
           $scope.postings = response.data;
         }, 
         function(response) { //error
-          alert(`Problem in ListPostsController`);
+          alert("Problem in ListPostsController");
         }
       );
 

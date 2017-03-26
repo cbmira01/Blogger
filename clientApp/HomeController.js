@@ -1,5 +1,7 @@
 "use strict";
 
+// HomeController just fills $scope with a list of current bloggers.
+
 blogApp.controller("HomeController", [
   "$scope", 
   "$http", 

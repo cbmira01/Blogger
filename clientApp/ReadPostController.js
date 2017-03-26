@@ -1,5 +1,8 @@
 "use strict";
 
+// ReadPostController facilitates the detailed display of a 
+// particular blog post.
+
 blogApp.controller("ReadPostController", [
   "$scope", 
   "$http", 

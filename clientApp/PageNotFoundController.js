@@ -1,5 +1,8 @@
 "use strict";
 
+// PageNotFoundController delivers content to display in case a
+// application resource (blogger or posting) was not found.
+
 blogApp.controller("PageNotFoundController", [
   "$scope", 
   function($scope) {      

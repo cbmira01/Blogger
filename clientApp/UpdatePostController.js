@@ -1,5 +1,10 @@
 "use strict";
 
+// UpdatePostController fills $scope with a list of all current posts,
+// or posts from a selected blogger, then sends a possibly updated post
+// back to the API. 
+// On success, this controller routes to /list-posts/all
+
 blogApp.controller("UpdatePostController", [
   "$scope",
   "$http",
@@ -8,7 +13,6 @@ blogApp.controller("UpdatePostController", [
   "$routeParams",
   function ($scope, $http, $location, $route, $routeParams) {
 
-    // Make sure $scope contains current post values
     $http({
       method: "GET", 
       url: `http://localhost:8080/api/read-post/${$routeParams.postid}`
@@ -22,9 +26,7 @@ blogApp.controller("UpdatePostController", [
         }
       );
 
-    // Send any updated posting values
     $scope.updatePost = function() {
-
       const updatedPosting = {
         title: $scope.newtitle,
         content: $scope.newcontent
