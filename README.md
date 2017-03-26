@@ -38,22 +38,22 @@ Completed for Code Louisville's Spring 2017 session
         - Issue the command "npm install" in the application folder
 - Start the application
     - Start the MongoDB server
-        - MongoDB can be run in its own CLI, or as a background service
-        - To demonstrate MongoDB authentication, use the --auth option 
+        - MongoDB can be run in its own command window, or as a background service
+        - To demonstrate MongoDB authentication, use the --auth startup option 
         - Configure "mongoUsesAuth" in ./server/config.js to agree with the authentication option
         - MongoDB authentication is not required to run the application
-    - Start the MongoDB client shell, if desired
+    - Start a MongoDB client shell, if desired
     - Start the Blogger application
         - Open a command-line window in the application root
-        - Issue "node index -c mongodbip -u username -p password -r"
-            - "mongodbip" is the network address of your MongoDB server, most likely "localhost"
+        - Issue "node index -c mongoip -u username -p password -r"
+            - "mongoip" is the network address of your MongoDB server, most likely "localhost"
             - If MongoDB requires authentication, application startup will require a username and password
             - Use (optionally) "-r empty" or "-r seed" to reset the database
+            - Use "node index --help" to see all options.
     - Start a web browser and point it to "localhost:8080/Home"
 - Application highlights
-    - Errors and route requests are logged to the Node-js console
+    - Errors and route requests are logged to the Node.js console
     - "npm build" target can be used to rebuild the minimized Angular app after alterations
     - The AngularJS library is unminimized to allow for clearer error reporting
-    - Database can retained from a previous run, reset to empty, or seeded with bloggers and postings.
 
 ## Comments are welcome! Send to: Calvin Miracle, cbmira01@gmail.com

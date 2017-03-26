@@ -15,8 +15,7 @@ const BloggerSchema = new mongoose.Schema({
   slogan: String,
   resume: String,
   photolink: String,
-  created_at: { type: Date, default: Date.now },
-  bloggerguid: String,
+  created_at: { type: Date, default: Date.now }
 });
 
 const Blogger = mongoose.model("Blogger", BloggerSchema);

@@ -5,12 +5,26 @@ blogApp.controller("CreatePostController", [
   "$http",
   "$location",
   function ($scope, $http, $location) {
+
+    $http({
+      method: "GET", 
+      url: "http://localhost:8080/api/list-bloggers"
+    })
+      .then(
+        function(response) { //success
+          $scope.bloggers = response.data;
+        }, 
+        function(response) { //error
+          alert(`Problem in CreatePostController`);
+        }
+      );
     
-    $scope.createPost = function() {
-      
+    $scope.createPost = function() {      
       const newPost = {
-        title: $scope.title,
-        content: $scope.content
+        title: $scope.newtitle,
+        content: $scope.newcontent,
+        byname: $scope.chosenBlogger.name,
+        byguid: $scope.chosenBlogger._id
       };
 
       $http({

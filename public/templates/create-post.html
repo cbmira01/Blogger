@@ -2,18 +2,41 @@
 
   <h3>Create a Blog Posting</h3>
   
-  <form>
-    <div>
-      <label>Title
-        <input type="text" ng-model="title"/>
-      </label>
+  <form name="addPostForm">
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Select a blogger
+          <select ng-model="chosenBlogger">
+            <option ng-repeat="blogger in bloggers" ng-value="{{blogger}}">{{blogger.name}}</option>
+          </select>
+        </label>
+      </div>
     </div>
 
     <div>
-      <label>Content
-        <input type="text" ng-model="content"/>
-      </label>
+      {{chosenBlogger.name}}
     </div>
+
+    <div>
+      {{chosenBlogger._id}}
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Title...
+          <input type="text" ng-model="newtitle"/>
+        </label>
+      </div>
+    </div>
+   
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Posting text...
+          <textarea ng-model="newcontent"></textarea>
+        </label>
+      </div>
+    </div>
+    
   </form>
 
   <a href="" ng-click="createPost()">Create Blog Post</a>
