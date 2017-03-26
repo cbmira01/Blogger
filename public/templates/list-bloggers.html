@@ -1,32 +1,8 @@
-<!-- <div >  
-  <a href="/create-blogger">Create a Blogger</a>
-  <table>
-    <thead>
-      <tr>
-        <th><pre>Name         </pre></th>
-        <th><pre>slogan       </pre></th>
-        <th><pre>             </pre></th>
-        <th><pre>             </pre></th>
-        <th><pre>             </pre></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="blogger in bloggers">
-        <td>{{blogger.name}}</td>
-        <td>{{blogger.slogan}}</td>
-        <td><a href="/list-posts/{{blogger._id}}">Read posts by blogger</a></td>
-        <td><a href="/update-blogger/{{blogger._id}}">Update</a></td>
-        <td><a href="" ng-click="deleteBlogger(blogger._id)">Delete</a></td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
-
-<div class="row bumpPastTopbar">
+<!-- <div class="row bumpPastTopbar">
   <a href="/create-blogger" class="button small">Create a Blogger</a>
 
   <div ng-repeat="blogger in bloggers">
-    <div class="column small-12 callout">   
+    <div class="column callout small-12 callout">   
       <div>
         {{blogger.name}}
       </div>
@@ -39,6 +15,33 @@
           <a href="/list-posts/{{blogger._id}}" class="button small">Read posts</a>
           <a href="/update-blogger/{{blogger._id}}" class="button small">Update</a>
           <a href="" ng-click="deleteBlogger(blogger._id)" class="button small">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+
+<div class="row bumpPastTopbar">
+  <a href="/create-blogger" class="button small">Create a Blogger</a>
+
+  <div class="column callout small-12"
+    <div ng-repeat="blogger in bloggers">
+      <div class="column small-3 medium-3 large-3">
+        <img ng-src="{{blogger.photolink}}" src="img/no-kitten.jpg" alt="Posting image"/>
+      </div>
+
+      <div class="column small-9 medium-9 large-9">
+        <div>
+          {{blogger.name}}
+        </div>    
+        <div>
+          {{blogger.slogan}}
+        </div>
+        <div>
+          <a href="/list-posts/{{blogger._id}}" class="button small">Read posts</a>
+          <a href="/update-blogger/{{blogger._id}}" class="button small">Update</a>
+          <a href="" ng-click="deleteBlogger(blogger._id)" class="button small">Delete</a>
+        </div>
       </div>
     </div>
   </div>

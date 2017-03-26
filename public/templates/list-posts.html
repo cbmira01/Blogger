@@ -1,23 +1,28 @@
-<div >  
-  <a href="/create-post">Create a Post</a>
-  <table>
-    <thead>
-      <tr>
-        <th><pre>Title        </pre></th>
-        <th><pre>Content      </pre></th>
-        <th><pre>             </pre></th>
-        <th><pre>             </pre></th>
-        <th><pre>             </pre></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="posting in postings">
-        <td>{{posting.title}}</td>
-        <td>{{posting.content}}</td>
-        <td><a href="/read-post/{{posting._id}}">Read more</a></td>
-        <td><a href="/update-post/{{posting._id}}">Update</a></td>
-        <td><a href="" ng-click="deletePost(posting._id)">Delete</a></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="row bumpPastTopbar">
+  <a href="/create-post" class="button small">Create a Post</a>
+
+  <div class="column callout small-12"
+    <div ng-repeat="posting in postings">
+      <div class="column small-3 medium-3 large-3">
+        <img ng-src="{{posting.imagelink}}" src="img/no-kitten.jpg" alt="Posting image"/>
+      </div>
+
+      <div class="column small-9 medium-9 large-9">
+        <div>
+          {{posting.byname}}
+        </div>    
+        <div>
+          {{posting.title}}
+        </div>
+        <div>
+          {{posting.content | limitTo: 100}}
+        </div>
+        <div>
+            <a href="/read-post/{{posting._id}}" class="button small">Read post</a>
+            <a href="/update-post/{{posting._id}}" class="button small">Update</a>
+            <a href="" ng-click="deletePost(posting._id)" class="button small">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
