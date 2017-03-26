@@ -1,4 +1,4 @@
-<div >  
+<!-- <div >  
   <a href="/create-blogger">Create a Blogger</a>
   <table>
     <thead>
@@ -20,4 +20,26 @@
       </tr>
     </tbody>
   </table>
+</div> -->
+
+<div class="row bumpPastTopbar">
+  <a href="/create-blogger" class="button small">Create a Blogger</a>
+
+  <div ng-repeat="blogger in bloggers">
+    <div class="column small-12 callout">   
+      <div>
+        {{blogger.name}}
+      </div>
+
+      <div>
+        {{blogger.slogan}}
+      </div>
+
+      <div>
+          <a href="/list-posts/{{blogger._id}}" class="button small">Read posts</a>
+          <a href="/update-blogger/{{blogger._id}}" class="button small">Update</a>
+          <a href="" ng-click="deleteBlogger(blogger._id)" class="button small">Delete</a>
+      </div>
+    </div>
+  </div>
 </div>

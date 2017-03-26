@@ -43,23 +43,8 @@ a.main-logo h4 {
 	display: inline;
 }
 
-.menuButton {
-	height: 3.5em;
-	background: #333;	
-	font-size: 3em;
-}
-
-.menuButton:hover, .menuButton:focus {
-	background: #333;
-}
-
-.menuButton i {
-	color: white;
-	font-size: 2.75em;
-}
-
 .bumpPastTopbar {
-	margin-top: 5em;
+	margin-top: 2em;
 }
 
 /* Panel Colors
@@ -110,7 +95,7 @@ a.main-logo h4 {
 /* Footer
 ================================= */
 footer {
-	color: silver;
+	color: gray;
 }
 
 .socialIcon {
