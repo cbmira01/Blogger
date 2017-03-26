@@ -10,8 +10,9 @@ Angular routes:
 
 /home 
   - nice initial display of all bloggers
-  - link to /list-posts/:bloggerid
   - link to /list-posts/all
+    Per blogger:
+    - link to /list-posts/:bloggerid
 
 /create-blogger
   - create a new blogger
@@ -29,9 +30,9 @@ Angular routes:
   - list all bloggers to allow update/delete
   - link to /create-blogger
     Per blogger:
-    - link to /list-posts/:bloggerguid
-    - link to /delete-blogger/:bloggerid
+    - link to /list-posts/:bloggerid
     - link to /update-blogger/:bloggerid
+    - link to /delete-blogger/:bloggerid
 
 /create-post
   - add a new blog posting
@@ -46,23 +47,23 @@ Angular routes:
 
 /delete-post/:postid
   - delete posting :postid
-  - redirect to /list-posts
+  - redirect to /list-posts/all
 
 /list-posts/all
-  - display briefly all postings from all bloggers in reverse time order
+  - display briefly all postings from all bloggers
   - link to /create-post
     Per posting:
     - link to /read-post/:postid
-    - link to /delete-post/:postid
     - link to /update-post/:postid
+    - link to /delete-post/:postid
 
 /list-posts/:bloggerid
-  - display briefly all postings from blogger :bloggerid in reverse time order
+  - display briefly all postings from blogger :bloggerid
   - link to /create-post
     Per posting:
     - link to /read-post/:postid
-    - link to /delete-post/:postid
     - link to /update-post/:postid
+    - link to /delete-post/:postid
   
 /page-not-found
   - handle case of blogger or posting not found

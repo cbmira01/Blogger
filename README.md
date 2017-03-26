@@ -45,7 +45,7 @@ Completed for Code Louisville's Spring 2017 session
     - Start a MongoDB client shell, if desired
     - Start the Blogger application
         - Open a command-line window in the application root
-        - Issue "node index -c mongoip -u username -p password -r"
+        - Issue "node index -c mongoip -u username -p password -r seed"
             - "mongoip" is the network address of your MongoDB server, most likely "localhost"
             - If MongoDB requires authentication, application startup will require a username and password
             - Use (optionally) "-r empty" or "-r seed" to reset the database
