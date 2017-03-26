@@ -1,5 +1,8 @@
+"use strict";
 
-// http://stackoverflow.com/a/31443029
+// Establish API routes and a default route back to the Angular application.
+
+// Structure here was suggested by http://stackoverflow.com/a/31443029
 //   Allow Express to handle the API routes first, 
 //   then let Angular handle the remaining routes.
 
@@ -7,7 +10,7 @@ const path = require("path");
 const router = require("express").Router();
 module.exports = router;
 
-// CRUD implementations for models...
+// CRUDL implementations for models...
 const postingController = require("./controllers/posting.controller.js");
 const bloggerController = require("./controllers/blogger.controller.js");
 
@@ -30,9 +33,8 @@ router.post("/api/update-post/:postid", postingController.update);
 router.post("/api/delete-blogger/:bloggerid", bloggerController.delete);
 router.post("/api/delete-post/:postid", postingController.delete);
 
-// Remaining routes handled by Angular.
+// Remaining routes handled by Angular...
 router.get("/*", function(req, res){
-  // console.log(`  Route passed to Angular: ${req.method}, ${req.path}`);
   const serveFile = path.join(__dirname, "/../../", "public/index.html");
   return res.sendFile(serveFile);
 });

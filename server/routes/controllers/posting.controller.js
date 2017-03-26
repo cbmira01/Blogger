@@ -1,3 +1,4 @@
+"use strict";
 
 // Implement CRUDL operations for the posting model.
 

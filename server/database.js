@@ -1,8 +1,7 @@
+"use strict";
 
 // Establish MongDB connection 
 //  (thanks to http://theholmesoffice.com/mongoose-connection-best-practice/)
-
-"use strict";
 
 const mongoose = require("mongoose");
 const dbConfig = require("./config");
