@@ -1,7 +1,8 @@
 "use strict";
 
 // ReadPostController facilitates the detailed display of a 
-// particular blog post.
+// particular blog post. If the resource lookup fails at the
+// API, this controller will route to /page-not-found
 
 blogApp.controller("ReadPostController", [
   "$scope", 
@@ -16,7 +17,10 @@ blogApp.controller("ReadPostController", [
     })
       .then(
         function(response) { //success
-          $scope.posting = response.data;        
+          $scope.posting = response.data;  
+          if ($scope.posting == null) {
+            $location.path("/page-not-found");
+          }
         }, 
         function(response) { //error
           $location.path("/page-not-found");

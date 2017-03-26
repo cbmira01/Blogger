@@ -1,7 +1,8 @@
 "use strict";
 
 // ListBloggersController fills $scope with a list of current bloggers,
-// and can facilitate the selection of a blogger to delete. 
+// and can facilitate the selection of a blogger to delete. This 
+// controller can handle zero bloggers.
 // On success, the current route is reloaded.
 
 blogApp.controller("ListBloggersController", [
