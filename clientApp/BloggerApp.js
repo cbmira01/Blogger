@@ -1,6 +1,6 @@
 "use strict";
 
-// Definition of the application's AngularJS module and routes
+// Definition of the application"s AngularJS module and routes
 // begins here. HTML5 history option is used to eliminate #hash
 // symbols in route URLs.
 
@@ -58,6 +58,5 @@ blogApp.config([
     // Use the HTML5 History API
     // https://scotch.io/tutorials/pretty-urls-in-angularjs-removing-the-hashtag
     $locationProvider.html5Mode(true);
-
   }
 ]);

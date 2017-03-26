@@ -1,9 +1,14 @@
-<div>
-  <div ng-repeat="blogger in bloggers">
-    <ul>
-      <li>{{blogger.name}}</li>
-      <li>{{blogger.slogan}}</li>
-    <a href="/list-posts/{{blogger._id}}">Read posts by this blogger</a>
-    </ul>
+<div class="bumpPastTopbar">
+  <div class="row" data-equalizer data-equalize-on-stack="false">
+    <div ng-repeat="blogger in bloggers">
+      <div class="column small-12 medium-6 large-4">
+        <div class="callout crop" data-equalizer-watch>
+          <img ng-src="{{blogger.photolink}}" alt="Blogger image"/>
+          <h5>{{blogger.name}}</h5>
+          <h5>{{blogger.slogan}}</h5>
+          <a href="/list-posts/{{blogger._id}}" class="button tiny">Read More</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -7,11 +7,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/node_modules/foundation-sites/dist/css/foundation.css" />
+    <link rel="stylesheet" href="/css/my-styles.css" />
   </head>
 
   <body>
-    <h2>Deer Park Neighborhood Association Blogs</h2>
-
     <!-- Top Bar -->
     <div ng-include="'templates/top-bar.html'"></div>
 
@@ -25,15 +24,16 @@
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-route/angular-route.js"></script>
     <script src="/node_modules/what-input/dist/what-input.js"></script>
-    <script src="/node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="/node_modules/foundation-sites/dist/js/plugins/foundation.core.js"></script>
+    <script src="/node_modules/foundation-sites/dist/js/plugins/foundation.equalizer.js"></script>
+    <script src="/node_modules/foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js"></script>
+    <script src="/node_modules/foundation-sites/dist/js/plugins/foundation.util.timerAndImageLoader.js"></script>
 
     <script src="/clientApp/BloggerApp.js"></script>
     <script src="/clientApp/HomeController.js"></script>
-
     <script src="/clientApp/CreateBloggerController.js"></script>
     <script src="/clientApp/ListBloggersController.js"></script>
     <script src="/clientApp/UpdateBloggerController.js"></script>
-
     <script src="/clientApp/CreatePostController.js"></script>   
     <script src="/clientApp/ReadPostController.js"></script>
     <script src="/clientApp/ListPostsController.js"></script>
@@ -45,9 +45,20 @@
     <script src="/public/angular/BloggerApp.min.js"></script>
     -->  
     <script>
-      $(function() {
-        $(document).foundation();
-      });
+      // Start Zurb Foundation
+      $(document).foundation();
+
+      //  Foundation reactive feature: rewrite top-bar in small media
+      $(window).resize(function() {
+        var isSmallMedia = (Foundation.MediaQuery.current === "small");
+        var dpnaElement = document.getElementById("dpnaText");
+        if (dpnaElement === null) { return }
+        if ( isSmallMedia ) {
+          dpnaElement.innerHTML = "DPNA";
+        } else {
+            dpnaElement.innerHTML = "Deer Park Neighborhood Association";
+        }
+      }); //end on-resize
     </script>
  
   </body>

@@ -1,0 +1,136 @@
+
+/* Accessibility styling
+================================ */
+*:focus {
+	outline: dashed;
+}
+
+a {
+	outline: none;
+}
+
+a:focus, a:hover {
+	outline: solid;
+	background: invert;
+}
+
+a:active {
+	outline: none;
+}
+
+/* Type
+================================ */
+h1, h2, h3, h4, h5, h6 {
+	color: black;
+}
+
+/* Top-bar
+================================ */
+.topbar {
+	height: 4em;
+  overflow: visible;
+}
+
+.deerLogo {
+	height: 4em; 
+	width: 4em;
+  display: inline;
+}
+
+a.main-logo h4 {
+	margin-left: 1em;
+	color: black;
+	display: inline;
+}
+
+.menuButton {
+	height: 3.5em;
+	background: #333;	
+	font-size: 3em;
+}
+
+.menuButton:hover, .menuButton:focus {
+	background: #333;
+}
+
+.menuButton i {
+	color: white;
+	font-size: 2.75em;
+}
+
+.bumpPastTopbar {
+	margin-top: 5em;
+}
+
+/* Panel Colors
+================================ */
+.bloggerColorA {
+  background: #e6cef1;
+	border-style: none;
+}
+
+.bloggerColorB {
+	background: #fff3b6;	
+}
+
+.bloggerColorC {
+	background: #def8b1;	
+}
+
+.postingColorA {	
+	background: #b1de60;
+}
+
+.postingColorB {	
+	background: #cdf18b;
+}
+
+.postingColorC {	
+	background: #def8b1;
+}
+
+/* Images and Video 
+================================ */
+.picture {
+	height: 80px;
+	width: 80px;
+}
+
+.crop {
+ height: auto;
+ width: 100%;
+ overflow: hidden;
+}
+
+.crop img {
+ height: 400px;
+ width: 400px;
+}
+
+/* Footer
+================================= */
+footer {
+	color: silver;
+}
+
+.socialIcon {
+	font-size: 3em;
+  display: inline;
+  color: silver;
+}
+
+/* Media Queries
+================================= */
+// Foundation media queries from http://foundation.zurb.com/docs/media-queries.html
+
+// Small screens,  up to 640px 
+@media only screen and (max-width: 40em) { 
+}
+
+// Medium screens, 641px to 1024px 
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+}
+
+// Large screens,  1025px to 1440px and larger..
+@media only screen and (min-width: 64.063em) { 
+}
