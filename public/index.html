@@ -4,6 +4,9 @@
     <title>DPNA Blogs</title>
     <meta charset="utf-8">
     <base href="/">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/node_modules/foundation-sites/dist/css/foundation.css" />
   </head>
 
   <body>
@@ -18,8 +21,11 @@
     <!-- Footer -->
     <div ng-include="'templates/footer.html'"></div>
 
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="/node_modules/what-input/dist/what-input.js"></script>
+    <script src="/node_modules/foundation-sites/dist/js/foundation.js"></script>
 
     <script src="/clientApp/BloggerApp.js"></script>
     <script src="/clientApp/HomeController.js"></script>
@@ -38,6 +44,11 @@
      <!--     
     <script src="/public/angular/BloggerApp.min.js"></script>
     -->  
+    <script>
+      $(function() {
+        $(document).foundation();
+      });
+    </script>
  
   </body>
 </html>

@@ -6,20 +6,18 @@ This project demonstrates a blogging application constructed in MEAN
 Completed for Code Louisville's Spring 2017 session
 
 ## Web site features
-- Tracking of bloggers and their postings
-- All CRUD operations demonstrated
-
-## Points of interest
+- Track bloggers and their postings
+- All CRUDL operations demonstrated
 - Responsive to large, medium and small media
 - Small initial database can be re-seeded
-- MongoDB authentication demonstrated
+- MongoDB server authentication can be demonstrated
 
 ## Packages and frameworks
 - MongoDB 3.4.2, Mongoose 4.8.2
 - Express 4.14.1
 - Angular 1.6.1
 - Node.js 6.9.4
-- Zurb Foundation
+- Zurb Foundation for Sites 6.3.1
 
 ## To see it in action:
 - Install the application and its runtime environment
@@ -44,7 +42,7 @@ Completed for Code Louisville's Spring 2017 session
         - MongoDB authentication is not required to run the application
     - Start a MongoDB client shell, if desired
     - Start the Blogger application
-        - Open a command-line window in the application root
+        - Open a command window in the application root
         - Issue "node index -c mongoip -u username -p password -r seed"
             - "mongoip" is the network address of your MongoDB server, most likely "localhost"
             - If MongoDB requires authentication, application startup will require a username and password
