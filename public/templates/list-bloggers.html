@@ -1,32 +1,9 @@
-<!-- <div class="row bumpPastTopbar">
-  <a href="/create-blogger" class="button small">Create a Blogger</a>
-
-  <div ng-repeat="blogger in bloggers">
-    <div class="column callout small-12 callout">   
-      <div>
-        {{blogger.name}}
-      </div>
-
-      <div>
-        {{blogger.slogan}}
-      </div>
-
-      <div>
-          <a href="/list-posts/{{blogger._id}}" class="button small">Read posts</a>
-          <a href="/update-blogger/{{blogger._id}}" class="button small">Update</a>
-          <a href="" ng-click="deleteBlogger(blogger._id)" class="button small">Delete</a>
-      </div>
-    </div>
-  </div>
-</div>
- -->
-
 <div class="row bumpPastTopbar">
   <a href="/create-blogger" class="button small">Create a Blogger</a>
 
   <div class="column callout small-12"
     <div ng-repeat="blogger in bloggers">
-      <div class="column small-3 medium-3 large-3">
+      <div class="column small-3 medium-3 large-3 picture">
         <img ng-src="{{blogger.photolink}}" src="img/no-kitten.jpg" alt="Posting image"/>
       </div>
 
