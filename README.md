@@ -7,6 +7,7 @@ Completed for Code Louisville's Spring 2017 session
 
 ## Web site features
 - Track bloggers and their postings
+- Individual blog postings have a publishable URL
 - All CRUDL operations demonstrated
 - Responsive to large, medium and small media
 - Small initial database can be re-seeded
