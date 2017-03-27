@@ -1,10 +1,10 @@
-<div>
+<div class="row bumpPastTopbar">
 
-  <h3>Create a Blog Posting</h3>
+  <h4>Create a Blog Posting</h4>
   
   <form name="addPostForm">
     <div class="row">
-      <div class="large-12 columns">
+      <div class="column small-12">
         <label>Select a blogger
           <select ng-model="chosenBlogger">
             <option ng-repeat="blogger in bloggers" ng-value="{{blogger}}">{{blogger.name}}</option>
@@ -13,32 +13,31 @@
       </div>
     </div>
 
-    <div>
-      {{chosenBlogger.name}}
-    </div>
-
-    <div>
-      {{chosenBlogger._id}}
-    </div>
-    
     <div class="row">
-      <div class="large-12 columns">
-        <label>Title...
-          <input type="text" ng-model="newtitle"/>
+      <div class="column small-12">
+        <label>Title
+          <input type="text" ng-model="newTitle"/>
         </label>
       </div>
     </div>
    
     <div class="row">
-      <div class="large-12 columns">
-        <label>Posting text...
-          <textarea ng-model="newcontent"></textarea>
+      <div class="column small-12">
+        <label>Content
+          <textarea ng-model="newContent"></textarea>
         </label>
       </div>
-    </div>
-    
+    </div>    
+
+    <div class="row">
+      <div class="column small-12">
+        <label>Image Link
+          <textarea ng-model="newImagelink"></textarea>
+        </label>
+      </div>
+    </div> 
   </form>
 
-  <a href="" ng-click="createPost()">Create Blog Post</a>
+  <a href="" ng-click="createPost()" class="button small">Submit</a>
   
 </div>

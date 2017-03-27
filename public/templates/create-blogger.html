@@ -1,21 +1,41 @@
-<div>
+<div class="row bumpPastTopbar">
 
-  <h3>Create a Blogger</h3>
+  <h4>Create a Blogger</h4>
   
-  <form>
-    <div>
-      <label>User's name
-        <input type="text" ng-model="bloggerName"/>
-      </label>
+  <form name="addPostForm">
+    <div class="row">
+      <div class="column small-12">
+        <label>Name
+          <input type="text" ng-model="newName"/>
+        </label>
+      </div>
     </div>
+   
+    <div class="row">
+      <div class="column small-12">
+        <label>Slogan
+          <textarea ng-model="newSlogan"></textarea>
+        </label>
+      </div>
+    </div>    
 
-    <div>
-      <label>User's slogan
-        <input type="text" ng-model="bloggerSlogan"/>
-      </label>
-    </div>
+    <div class="row">
+      <div class="column small-12">
+        <label>Resume
+          <textarea ng-model="newResume"></textarea>
+        </label>
+      </div>
+    </div> 
+
+    <div class="row">
+      <div class="column small-12">
+        <label>Photo link
+          <textarea ng-model="newPhotolink"></textarea>
+        </label>
+      </div>
+    </div> 
   </form>
 
-  <a href="" ng-click="createBlogger()">Create Blogger</a>
+  <a href="" ng-click="createBlogger()" class="button small">Submit</a>
   
 </div>

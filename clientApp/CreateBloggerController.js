@@ -11,8 +11,10 @@ blogApp.controller("CreateBloggerController", [
     
     $scope.createBlogger = function() {      
       const newBlogger = {
-        name: $scope.bloggerName,
-        slogan: $scope.bloggerSlogan
+        name: $scope.newName,
+        slogan: $scope.newSlogan,
+        resume: $scope.newResume,
+        photolink: $scope.newPhotolink
       };
 
       $http({

@@ -27,8 +27,9 @@ blogApp.controller("CreatePostController", [
     
     $scope.createPost = function() {      
       const newPost = {
-        title: $scope.newtitle,
-        content: $scope.newcontent,
+        title: $scope.newTitle,
+        content: $scope.newContent,
+        imagelink: $scope.newImagelink,
         byname: $scope.chosenBlogger.name,
         byguid: $scope.chosenBlogger._id
       };
