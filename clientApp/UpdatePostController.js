@@ -26,10 +26,11 @@ blogApp.controller("UpdatePostController", [
         }
       );
 
-    $scope.updatePost = function() {
+    $scope.updatePosting = function() {
       const updatedPosting = {
-        title: $scope.newtitle,
-        content: $scope.newcontent
+        title: $scope.newTitle,
+        content: $scope.newContent,
+        imagelink: $scope.newImagelink
       };
 
       $http({

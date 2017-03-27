@@ -27,8 +27,10 @@ blogApp.controller("UpdateBloggerController", [
 
     $scope.updateBlogger = function() {      
       const updatedBlogger = {
-        name: $scope.newname,
-        slogan: $scope.newslogan
+        name: $scope.newName,
+        slogan: $scope.newSlogan,
+        resume: $scope.newResume,
+        photolink: $scope.newPhotolink
       };
 
       $http({

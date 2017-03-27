@@ -1,30 +1,33 @@
-<div>
+<div class="row bumpPastTopbar">
 
-  <h3>Update a Post</h3>
-
-  <form>
-    <div>
-      <div>
-        Title 
-        <div> 
-          {{posting.title}} 
-        </div>
-        <div>
-          <textarea name="textarea" ng-model="newtitle"></textarea>
-        </div>
+  <h4>Update a Posting</h4>
+  
+  <form name="addPostForm">
+    <div class="row">
+      <div class="column small-12">
+        <label>Title: {{posting.title}}
+          <input type="text" ng-model="newTitle"/>
+        </label>
       </div>
-
-      <div>
-        Content
-        <div>
-          {{posting.content}}
-        </div>
-        <div>
-          <textarea name="textarea" ng-model="newcontent"></textarea>
-        </div>
-      </div>
-
-      <a href="" ng-click="updatePost()">Update Post</a>
     </div>
+   
+    <div class="row">
+      <div class="column small-12">
+        <label>Content: {{posting.content}}
+          <textarea ng-model="newContent"></textarea>
+        </label>
+      </div>
+    </div>    
+
+    <div class="row">
+      <div class="column small-12">
+        <label>Image link: {{posting.imagelink}}
+          <textarea ng-model="newImagelink"></textarea>
+        </label>
+      </div>
+    </div> 
   </form>
+
+  <a href="" ng-click="updatePosting()" class="button small">Submit</a>
+  
 </div>
