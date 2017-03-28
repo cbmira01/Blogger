@@ -36,9 +36,6 @@
     "http-status-codes": "^1.1.6",
     "jquery": "^3.1.1",
     "mongoose": "^4.8.2",
-    "pug": "^2.0.0-beta11",
-    "uglifyjs": "^2.4.10",
-    "uglifyjs-folder": "^1.0.0",
     "upath": "^1.0.0"
   }
 }
