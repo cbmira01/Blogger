@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "uglifyjs-folder clientApp -o public/angular/BloggerApp.min.js"
+    "build": "uglifyjs-folder clientApp -y -o public/js/BloggerApp.min.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,8 @@
     "http-status-codes": "^1.1.6",
     "jquery": "^3.1.1",
     "mongoose": "^4.8.2",
+    "uglifyjs": "^2.4.10",
+    "uglifyjs-folder": "^1.1.0",
     "upath": "^1.0.0"
   }
 }
