@@ -29,7 +29,7 @@ Completed for Code Louisville's Spring 2017 session
         - Determine where your MongoDB datastore will reside
         - Set up MongoDB administration user and database, if needed
         - Set up the application user and database
-        - Set up CLI scripts to assist server and client shell startup
+        - Set up scripts to assist server and client shell startup
         - For prepared examples, refer to ./notes/MongoDB-notes.txt
         - Refer to the MongoDB documentation for installation advice
     - Download the application into a preferred folder

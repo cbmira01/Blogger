@@ -2,8 +2,6 @@
 
 Notes on blogger application
 
-HOME, LIST POSTS, EDIT BLOGGERS, EDIT POSTS
-
 Angular routes:
 
 -- Unknown routes redirect to /home

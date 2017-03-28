@@ -1,9 +1,9 @@
 
 WARNING: The examples below are for demonstrating the Blogger app
-  using MongoDB authenticating mode. Do not use these examples in 
-  a production environment without due consideration.
+  using MongoDB server authenticating mode. Do not use these examples 
+  in a production environment without due consideration.
 
-Enable authenticating mode for MongoDB
+Enable authenticating mode for MongoDB server:
   https://docs.mongodb.com/manual/tutorial/enable-authentication/
 
 Create a Mongo admin database and user:
