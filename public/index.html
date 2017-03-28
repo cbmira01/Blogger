@@ -29,7 +29,6 @@
     <script src="/node_modules/foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js"></script>
     <script src="/node_modules/foundation-sites/dist/js/plugins/foundation.util.timerAndImageLoader.js"></script>
 
-<!-- 
     <script src="/clientApp/BloggerApp.js"></script>
     <script src="/clientApp/HomeController.js"></script>
     <script src="/clientApp/CreateBloggerController.js"></script>
@@ -40,26 +39,12 @@
     <script src="/clientApp/ListPostsController.js"></script>
     <script src="/clientApp/UpdatePostController.js"></script>
     <script src="/clientApp/PageNotFoundController.js"></script> 
--->
          
-    <script src="/public/angular/BloggerApp.min.js"></script>
-     
-    <script>
-      // Start Zurb Foundation
-      $(document).foundation();
+<!--     
+    <script src="/public/js/BloggerApp.min.js"></script>
+ -->     
 
-      //  Foundation reactive feature: rewrite top-bar in small media
-      $(window).resize(function() {
-        var isSmallMedia = (Foundation.MediaQuery.current === "small");
-        var dpnaElement = document.getElementById("dpnaText");
-        if (dpnaElement === null) { return }
-        if ( isSmallMedia ) {
-          dpnaElement.innerHTML = "DPNA";
-        } else {
-            dpnaElement.innerHTML = "Deer Park Neighborhood Association";
-        }
-      }); //end on-resize
-    </script>
+    <script src="/public/js/my-script.js"></script>
  
   </body>
 </html>
