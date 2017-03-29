@@ -3,10 +3,18 @@
     <div ng-repeat="blogger in bloggers">
       <div class="column small-12 medium-6 large-4">
         <div class="callout crop" data-equalizer-watch>
-          <img ng-src="{{blogger.photolink}}" alt="Blogger image"/>
-          <h4>{{blogger.name}}</h4>
-          <h4>{{blogger.slogan}}</h>
-          <a href="/list-posts/{{blogger._id}}" class="button small">Read More</a>
+          <div class="row" >
+            <img ng-src="{{blogger.photolink}}" alt="Blogger image"/>
+          </div>
+          <div class="row" >
+            {{blogger.name}}
+          </div>
+          <div class="row" >
+            {{blogger.slogan}}
+          </div>
+          <div class="row" >
+            <a href="/list-posts/{{blogger._id}}" class="button small">Read More</a>
+          </div>
         </div>
       </div>
     </div>

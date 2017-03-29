@@ -8,15 +8,15 @@
       </div>
 
       <div class="column small-9 medium-9 large-9">
-        <div>
+        <p>
           {{posting.byname}}
-        </div>    
-        <div>
+        </p>    
+        <p>
           {{posting.title}}
-        </div>
-        <div>
+        </p>
+        <p>
           {{posting.content | limitTo: 100}}
-        </div>
+        </p>
         <div>
             <a href="/read-post/{{posting._id}}" class="button small">Read post</a>
             <a href="/update-post/{{posting._id}}" class="button small">Update</a>
