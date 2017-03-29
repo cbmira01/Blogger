@@ -61,7 +61,7 @@ module.exports = {
   delete: function (req, res, next) {
     const bloggerid = req.params.bloggerid;
 
-    Blogger.findOneAndRemove({ _id : bloggerid}, function (err, raw){
+    Blogger.findOneAndRemove({ _id : bloggerid }, function (err, raw){
       if (err) {
         console.log(`  Error in blogger.controller.js - delete: ${err}`);
         res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(err);

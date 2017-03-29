@@ -35,6 +35,7 @@ Completed for Code Louisville's Spring 2017 session
     - Download the application into a preferred folder
         - Use Git clone, or download and unpack the ZIP file
     - Retrieve npm modules and libraries
+        - Open a command window in the application root
         - Issue the command "npm install" in the application folder
 - Start the application
     - Start the MongoDB server
@@ -53,7 +54,7 @@ Completed for Code Louisville's Spring 2017 session
     - Start a web browser and point it to "localhost:8080/Home"
 - Application highlights
     - Errors and route requests are logged to the Node.js console
-    - "npm build" target can be used to rebuild the minimized Angular app after alterations
+    - If you alter the Angular app, re-minimize it with "npm run build"
     - The AngularJS library is unminimized to allow for clearer error reporting
 
 ## Comments are welcome! Send to: Calvin Miracle, cbmira01@gmail.com

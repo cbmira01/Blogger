@@ -62,7 +62,7 @@ module.exports = {
   delete: function (req, res, next) {
     const postid = req.params.postid;
 
-    Posting.findOneAndRemove({ _id : postid}, function (err, raw){
+    Posting.findOneAndRemove({ _id : postid }, function (err, raw){
       if (err) {
         console.log(`  Error in posting.controller.js - delete: ${err}`);
         res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(err);

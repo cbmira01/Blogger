@@ -16,7 +16,7 @@ const bloggerController = require("./controllers/blogger.controller.js");
 
 // Log all requested routes to the console.
 router.use(function(req, res, next) {
-  console.log(`Route request: ${req.method}, ${req.path}`);
+  console.log(`Route request: ${req.method} ${req.path}`);
   next();
 });
 
