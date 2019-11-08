@@ -35,7 +35,7 @@
     "foundation-sites": "^6.3.1",
     "http-status-codes": "^1.1.6",
     "jquery": "^3.1.1",
-    "mongoose": "^4.8.2",
+    "mongoose": ">=5.7.5",
     "uglifyjs": "^2.4.10",
     "uglifyjs-folder": "^1.1.0",
     "upath": "^1.0.0"
